@@ -5,7 +5,7 @@ node_js:
 cache: npm
 branches:
   only:
-    - master # build master branch only
+    - hexo # build master branch only
 script:
   - sed -i "s/yuque_token/$YUQUE_TOKEN/g" package.json
   - npm run sync 
@@ -14,7 +14,8 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GH_TOKEN
-  keep-history: true
+  keep-history: false
   on:
-    branch: master
+    branch: hexo
+  target_branch: master
   local-dir: public
