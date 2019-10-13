@@ -10,6 +10,7 @@ script:
   - sed -i "s/yuque_token/$YUQUE_TOKEN/g" package.json
   - npm run sync 
   - hexo generate # generate static files
+  - echo "blog.gomi1992.xyz" > public/CNAME
 deploy:
   provider: pages
   skip-cleanup: true
