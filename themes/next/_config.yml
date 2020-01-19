@@ -603,11 +603,17 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
-  active:
+  active: disqus
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Modify texts or order for any navs, here are some examples.
   nav:
+    disqus:
+      text: Load Disqus
+      order: -1
+    valine:
+      text: Load Valine
+      order: -2
     #disqus:
     #  text: Load Disqus
     #  order: -1
@@ -618,8 +624,8 @@ comments:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: gomi-filed
   count: true
   lazyload: false
   #post_meta_order: 0
@@ -650,9 +656,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  appid: xM4asJlCsHFn7j0ILbwY9wLH-gzGzoHsz # Your leancloud application appid
+  appkey: Re8amx2YQE6Uww3tsqfyEBm6 # Your leancloud application appkey
   notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
