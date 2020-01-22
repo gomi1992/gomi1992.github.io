@@ -14,12 +14,14 @@
   "dependencies": {
     "hexo": "^3.9.0",
     "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^0.1.3",
     "hexo-generator-index": "^0.2.1",
+    "hexo-generator-sitemap": "^2.0.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-stylus": "^0.3.3",
     "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3"
   },
   "yuqueConfig": {
@@ -28,7 +30,7 @@
     "repo": "blog",
     "mdNameFormat": "title",
     "postPath": "source/_posts/yuque",
-    "token":"yuque_token"
+    "token": "yuque_token"
   },
   "devDependencies": {
     "yuque-hexo": "^1.6.2"
