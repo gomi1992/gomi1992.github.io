@@ -743,7 +743,7 @@ add_this_id:
 # ---------------------------------------------------------------
 
 # Baidu Analytics
-baidu_analytics: 41909ac38361948bbe8df44b4e3e48d7 # <app_id>
+baidu_analytics: # <app_id>
 
 # Growingio Analytics
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
@@ -751,7 +751,7 @@ growingio_analytics: # <project_id>
 
 # Google Analytics
 google_analytics:
-  tracking_id: UA-21822523-1 # <app_id>
+  tracking_id: # <app_id>
   localhost_ignored: true
 
 # CNZZ count
@@ -785,7 +785,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true
   total_visitors_icon: user
   total_views: true
