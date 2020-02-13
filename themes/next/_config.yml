@@ -278,6 +278,11 @@ symbols_count_time:
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
 
+# Recommended posts
+# Dependency: https://github.com/huiwang/hexo-recommended-posts
+recommended_posts:
+  enabled: false
+
 # Wechat Subscriber
 wechat_subscriber:
   enable: false

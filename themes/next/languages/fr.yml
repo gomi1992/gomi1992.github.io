@@ -38,6 +38,7 @@ post:
     link: Lien de l'article
     license_title: Droit d'auteur
     license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
+  recommended_posts: articles Recommandées
 page:
   totally: Total
   tags: mots clé
