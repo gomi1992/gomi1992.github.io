@@ -8,7 +8,8 @@ branches:
     - hexo # build master branch only
 script:
   - sed -i "s/yuque_token/$YUQUE_TOKEN/g" package.json
-  - npm run sync 
+  - npm run sync
+  - hexo recommend
   - hexo generate # generate static files
 deploy:
   provider: pages
