@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /fancybox/
+Sitemap: https://blog.gomi1992.xyz/sitemap.xml
+Sitemap: https://blog.gomi1992.xyz/baidu_sitemap.xml
