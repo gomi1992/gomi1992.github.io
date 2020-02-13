@@ -1,4 +1,4 @@
-{% if page.copyright %}
+
 <div class="my_post_copyright">
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
   
@@ -30,4 +30,3 @@
       });
     }));  
 </script>
-{% endif %}
