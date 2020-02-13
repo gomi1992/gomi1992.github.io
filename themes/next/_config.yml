@@ -281,7 +281,7 @@ tag_icon: false
 # Recommended posts
 # Dependency: https://github.com/huiwang/hexo-recommended-posts
 recommended_posts:
-  enabled: false
+  enabled: true
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -305,7 +305,7 @@ reward:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
+  enable: true
   title: # Custom header, leave empty to use the default one
   display_in_home: false
   params:
