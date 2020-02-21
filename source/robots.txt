@@ -9,5 +9,5 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 Disallow: /fancybox/
-Sitemap: https://blog.gomi1992.xyz/sitemap.xml
-Sitemap: https://blog.gomi1992.xyz/baidu_sitemap.xml
+Sitemap: https://gomi1992.xyz/sitemap.xml
+Sitemap: https://gomi1992.xyz/baidu_sitemap.xml
