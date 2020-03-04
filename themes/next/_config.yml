@@ -504,11 +504,11 @@ exturl: false
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
-google_site_verification:
+google_site_verification: _b8phplZqGVWt1PHfb6QbcpR6LtJRLkIXWJvEokJIp4
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
-bing_site_verification:
+bing_site_verification: 1CE439447AC9357595ACDB107111D43B
 
 # Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
