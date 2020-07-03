@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://gomi1992.github.io/
 root: /
-permalink: post/:abbrlink.html
+permalink: post/:abbrlink
 permalink_defaults:
 
 abbrlink:
