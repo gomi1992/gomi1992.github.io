@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="0b9xiCjnaatsFVJqc-3XEe2Ci5fu02rAbw6smne3fKM">
+  <meta name="msvalidate.01" content="1CE439447AC9357595ACDB107111D43B">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。">
+<meta name="keywords" content="无人机,电子,DIY">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DIY飞控蓝牙调参模块">
+<meta property="og:url" content="https://gomi1992.github.io/post/c10e5fcd.html">
+<meta property="og:site_name" content="GoMi_Field">
+<meta property="og:description" content="SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-08-19T00:43:07.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DIY飞控蓝牙调参模块">
+<meta name="twitter:description" content="SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。">
+  <link rel="canonical" href="https://gomi1992.github.io/post/c10e5fcd">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>DIY飞控蓝牙调参模块 | GoMi_Field</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="referrer" content="no-referrer">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GoMi_Field</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://gomi1992.github.io/post/c10e5fcd.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoMi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GoMi_Field">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">DIY飞控蓝牙调参模块
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-08-18 06:46:19" itemprop="dateCreated datePublished" datetime="2020-08-18T06:46:19+00:00">2020-08-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-19 00:43:07" itemprop="dateModified" datetime="2020-08-19T00:43:07+00:00">2020-08-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/无人机/" itemprop="url" rel="index"><span itemprop="name">无人机</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/post/c10e5fcd.html#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/c10e5fcd.html" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/c10e5fcd.html#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/post/c10e5fcd.html" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。</p>
+<a id="more"></a>
+
+<h1 id="为什么要-DIY-这玩意"><a href="#为什么要-DIY-这玩意" class="headerlink" title="为什么要 DIY 这玩意"></a>为什么要 DIY 这玩意</h1><ul>
+<li>iphone 没法通过 otg 连接飞控</li>
+<li>别人家卖的稍微有点贵</li>
+</ul>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>单片机作为 USB Host，与飞控通信。<br>单片机连接蓝牙串口模块，于手机通信。</p>
+<h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><p>speedybee 使用 STM32 F105 + TI CC2541 蓝牙。<br>STM32 F105 无须额外芯片即可作为 USB Host。</p>
+<p>emmm</p>
+<p>由于没有 F105 的开发板，我便采用了 arduino uno。<br>结合 USB Host Shield 和 蓝牙串口模块。</p>
+<p>USB Host Shield 官方购买连接 <a href="http://shop.tkjelectronics.dk/product_info.php?products_id=43" rel="external nofollow noopener noreferrer" target="_blank">http://shop.tkjelectronics.dk/product_info.php?products_id=43</a>，官方库（适用于 Arduino）<a href="https://github.com/felis/USB_Host_Shield_2.0" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/felis/USB_Host_Shield_2.0</a>。该板子使用了 max3421e 芯片。</p>
+<p>直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>前提是安装 USB Host Shield 的库。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cdcacm.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;usbhub.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//#include "pgmstrings.h"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Satisfy the IDE, which needs to see the include statment in the ino too.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> dobogusinclude</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;spi4teensy3.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;SPI.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ACMAsyncOper</span> :</span> <span class="keyword">public</span> CDCAsyncOper</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">uint8_t</span> <span class="title">OnInit</span><span class="params">(ACM *pacm)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">uint8_t</span> <span class="title">ACMAsyncOper::OnInit</span><span class="params">(ACM *pacm)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">uint8_t</span> rcode;</span><br><span class="line">  <span class="comment">// Set DTR = 1 RTS=1</span></span><br><span class="line">  rcode = pacm-&gt;SetControlLineState(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (rcode)</span><br><span class="line">  &#123;</span><br><span class="line">    ErrorMessage&lt;<span class="keyword">uint8_t</span>&gt;(PSTR(<span class="string">"SetControlLineState"</span>), rcode);</span><br><span class="line">    <span class="keyword">return</span> rcode;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  LINE_CODING  lc;</span><br><span class="line">  lc.dwDTERate  = <span class="number">115200</span>;</span><br><span class="line">  lc.bCharFormat  = <span class="number">0</span>;</span><br><span class="line">  lc.bParityType  = <span class="number">0</span>;</span><br><span class="line">  lc.bDataBits  = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">  rcode = pacm-&gt;SetLineCoding(&amp;lc);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (rcode)</span><br><span class="line">    ErrorMessage&lt;<span class="keyword">uint8_t</span>&gt;(PSTR(<span class="string">"SetLineCoding"</span>), rcode);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> rcode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">USB     Usb;</span><br><span class="line"><span class="comment">//USBHub     Hub(&amp;Usb);</span></span><br><span class="line">ACMAsyncOper  AsyncOper;</span><br><span class="line"><span class="function">ACM           <span class="title">Acm</span><span class="params">(&amp;Usb, &amp;AsyncOper)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">begin</span>(<span class="number">115200</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(__MIPSEL__)</span></span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">Serial</span>); <span class="comment">// Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"Start"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (Usb.Init() == <span class="number">-1</span>)</span><br><span class="line">    <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"OSCOKIRQ failed to assert"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">delay</span>( <span class="number">200</span> );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">uint8_t</span> datas[<span class="number">64</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  Usb.<span class="built_in">Task</span>();</span><br><span class="line">  <span class="keyword">if</span> ( Acm.isReady()) &#123;</span><br><span class="line">    <span class="keyword">uint8_t</span> rcode;</span><br><span class="line">    <span class="keyword">uint8_t</span> send_count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">Serial</span>.<span class="built_in">available</span>() &amp;&amp; send_count &lt; <span class="number">64</span>) &#123;</span><br><span class="line">      datas[send_count] = <span class="built_in">Serial</span>.<span class="built_in">read</span>();</span><br><span class="line">      send_count++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (send_count) &#123;</span><br><span class="line">      rcode = Acm.SndData(send_count, datas);</span><br><span class="line">      <span class="keyword">if</span> (rcode)</span><br><span class="line">        ErrorMessage&lt;<span class="keyword">uint8_t</span>&gt;(PSTR(<span class="string">"SndData"</span>), rcode);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">uint8_t</span>  buf[<span class="number">64</span>];</span><br><span class="line">    <span class="keyword">uint16_t</span> rcvd = <span class="number">64</span>;</span><br><span class="line">    rcode = Acm.RcvData(&amp;rcvd, buf);</span><br><span class="line">    <span class="keyword">if</span> (rcode &amp;&amp; rcode != hrNAK)</span><br><span class="line">      ErrorMessage&lt;<span class="keyword">uint8_t</span>&gt;(PSTR(<span class="string">"Ret"</span>), rcode);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ( rcvd ) &#123;</span><br><span class="line">      <span class="built_in">Serial</span>.<span class="built_in">write</span>(buf, rcvd);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">20</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    
+      <div>
+        <div class="recommended_posts">
+    
+    
+    <h1>推荐文章 </h1>
+    <ul>
+        
+            <li><a href="https://blog.dlzhang.com/posts/acb197c/" rel="external nofollow noopener noreferrer" target="_blank">上手无人机 体验一把飞行的乐趣</a></li>
+        
+    </ul>
+     
+</div>
+      </div>
+    
+      
+
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+        
+      </div>
+
+      <div>
+        
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js">
+
+  <p><span>本文标题:</span>DIY飞控蓝牙调参模块</p>
+  <p><span>文章作者:</span>GoMi</p>
+  <p><span>发布时间:</span>2020年08月18日 - 06:46:19</p>
+  <p><span>最后更新:</span>2020年08月19日 - 00:43:07</p>
+  <p><span>原始链接:</span><a href="/post/c10e5fcd.html" title="DIY飞控蓝牙调参模块">https://gomi1992.github.io/post/c10e5fcd.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://gomi1992.github.io/post/c10e5fcd.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+        
+      </div>
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/无人机/" rel="tag"># 无人机</a>
+            
+              <a href="/tags/电子/" rel="tag"># 电子</a>
+            
+              <a href="/tags/DIY/" rel="tag"># DIY</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/post/5fbcc4cd.html" rel="next" title="JavaFX 手记02--SceneBuilder">
+                  <i class="fa fa-chevron-left"></i> JavaFX 手记02--SceneBuilder
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+          
+            <li class="tab"><a href="#comment-disqus">Disqus</a></li>
+          
+            <li class="tab"><a href="#comment-valine">Valine</a></li>
+          
+        </ul>
+        <div class="tab-content">
+          
+            <div class="tab-pane disqus" id="comment-disqus">
+              
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+            </div>
+          
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
+            </div>
+          
+        </div>
+      </div>
+      <script>
+        window.addEventListener('tabs:register', () => {
+          let activeClass = 'valine';
+          
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          
+          if (activeClass) {
+            let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+            if (activeTab) {
+              activeTab.click();
+            }
+          }
+        });
+        
+        window.addEventListener('tabs:click', event => {
+          let commentClass = event.target.classList[1];
+          localStorage.setItem('comments_active', commentClass);
+        });
+        
+      </script>
+    
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要-DIY-这玩意"><span class="nav-number">1.</span> <span class="nav-text">为什么要 DIY 这玩意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现方案"><span class="nav-number">3.</span> <span class="nav-text">实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GoMi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/gomi1992" title="GitHub &rarr; https://github.com/gomi1992" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GoMi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://gomi-filed.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://gomi1992.github.io/post/c10e5fcd.html";
+    this.page.identifier = "post/c10e5fcd.html";
+    this.page.title = 'DIY飞控蓝牙调参模块';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://gomi-filed.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xM4asJlCsHFn7j0ILbwY9wLH-gzGzoHsz',
+    appKey: 'Re8amx2YQE6Uww3tsqfyEBm6',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
