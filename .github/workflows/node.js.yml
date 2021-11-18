@@ -8,6 +8,11 @@ on:
     branches: [ hexo ]
   pull_request:
     branches: [ hexo ]
+  workflow_dispatch:
+    inputs:
+      msg:
+        description: 'Message'     
+        default: 'hello'
 
 jobs:
   build:
