@@ -16,8 +16,9 @@ jobs:
 
     steps:
 
-    - name: Checkout Repository hexo branch
-      uses: actions/checkout@hexo 
+    - uses: actions/checkout@v2
+      with:
+        ref: hexo
       
     # from: https://github.com/actions/setup-node  
     - name: Setup Node.js 12.x 
