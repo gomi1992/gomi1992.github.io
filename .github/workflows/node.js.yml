@@ -30,6 +30,7 @@ jobs:
       run: |
         npm install hexo-cli -g
         npm install
+        npm install hexo-deployer-git --save
     - name: generate
       env:
         YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN}}
