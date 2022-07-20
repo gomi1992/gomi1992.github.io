@@ -48,8 +48,6 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         git config --global user.email "ilalh2owei@163.com"
         git config --global user.name "GoMi"
-        sed -i "s/yuque_token/$YUQUE_TOKEN/g" package.json
-        npm run sync
         hexo recommend
         cat source/_data/recommended_posts.json
         hexo generate
