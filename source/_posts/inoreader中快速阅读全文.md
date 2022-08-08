@@ -47,3 +47,9 @@ inoreader免费版对于我已经够用了，但是仍存在一点点小问题�
 
 # 不完整的美
 出于安全性考虑，浏览器禁止向iframe中传入cookie，这就导致一些小功能不好实现。
+
+# 小trick
+在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。
+``` html
+<meta name="referrer" content="no-referrer">
+```
