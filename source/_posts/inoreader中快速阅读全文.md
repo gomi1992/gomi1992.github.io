@@ -53,3 +53,4 @@ inoreader免费版对于我已经够用了，但是仍存在一点点小问题�
 ``` html
 <meta name="referrer" content="no-referrer">
 ```
+当然，已经有人在油猴脚本中实现了[显示防盗链图片 for Inoreader]([https://www.inoreader.com/](https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader))。
