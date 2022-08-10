@@ -48,9 +48,14 @@ inoreader免费版对于我已经够用了，但是仍存在一点点小问题�
 # 不完整的美
 出于安全性考虑，浏览器禁止向iframe中传入cookie，这就导致一些小功能不好实现。
 
-# 小trick
+# 小trick01
 在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。
 ``` html
 <meta name="referrer" content="no-referrer">
 ```
-当然，已经有人在油猴脚本中实现了[显示防盗链图片 for Inoreader]([https://www.inoreader.com/](https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader))。
+当然，已经有人在油猴脚本中实现了[显示防盗链图片 for Inoreader](https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader)。
+
+# 小trick02
+小trick01并不完美，在inoreader中缩略图仍没法加载。
+有个办法可以解决，在发送请求时拦截请求，去掉header中的referrer。
+浏览器中可以使用[ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)和[requestly.io](https://chrome.google.com/webstore/detail/redirect-url-modify-heade/mdnleldcmiljblolnjhpnblkcekpdkpa)等插件完成上述功能。
