@@ -629,7 +629,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: gomi-filed
   count: true
   lazyload: false
@@ -661,9 +661,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
-  appid: xM4asJlCsHFn7j0ILbwY9wLH-gzGzoHsz # Your leancloud application appid
-  appkey: Re8amx2YQE6Uww3tsqfyEBm6 # Your leancloud application appkey
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  appid:  # Your leancloud application appid
+  appkey:  # Your leancloud application appkey
   notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
