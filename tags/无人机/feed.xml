@@ -6,22 +6,134 @@
     <description>Recent content in 无人机 on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Aug 2020 14:46:19 +0800</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Aug 2020 14:46:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://gomi1992.github.io/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>DIY飞控蓝牙调参模块</title>
       <link>https://gomi1992.github.io/2020/08/18/20200818_diy%E9%A3%9E%E6%8E%A7%E8%93%9D%E7%89%99%E8%B0%83%E5%8F%82%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Tue, 18 Aug 2020 14:46:19 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2020/08/18/20200818_diy%E9%A3%9E%E6%8E%A7%E8%93%9D%E7%89%99%E8%B0%83%E5%8F%82%E6%A8%A1%E5%9D%97/</guid>
-      <description>SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。
-为什么要 DIY 这玩意 iphone 没法通过 otg 连接飞控 别人家卖的稍微有点贵 原理 单片机作为 USB Host，与飞控通信。 单片机连接蓝牙串口模块，于手机通信。
-实现方案 speedybee 使用 STM32 F105 + TI CC2541 蓝牙。 STM32 F105 无须额外芯片即可作为 USB Host。
-emmm
-由于没有 F105 的开发板，我便采用了 arduino uno。 结合 USB Host Shield 和 蓝牙串口模块。
-USB Host Shield 官方购买连接 http://shop.tkjelectronics.dk/product_info.php?products_id=43，官方库（适用于 Arduino）https://github.com/felis/USB_Host_Shield_2.0。该板子使用了 max3421e 芯片。
-直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。
-代码 前提是安装 USB Host Shield 的库。
-#include &amp;lt;cdcacm.h&amp;gt; #include &amp;lt;usbhub.h&amp;gt; //#include &amp;#34;pgmstrings.h&amp;#34; // Satisfy the IDE, which needs to see the include statment in the ino too.</description>
+      <description>&lt;p&gt;SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;为什么要-diy-这玩意&#34;&gt;为什么要 DIY 这玩意&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;iphone 没法通过 otg 连接飞控&lt;/li&gt;
+&lt;li&gt;别人家卖的稍微有点贵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;
+&lt;p&gt;单片机作为 USB Host，与飞控通信。
+单片机连接蓝牙串口模块，于手机通信。&lt;/p&gt;
+&lt;h1 id=&#34;实现方案&#34;&gt;实现方案&lt;/h1&gt;
+&lt;p&gt;speedybee 使用 STM32 F105 + TI CC2541 蓝牙。
+STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
+&lt;p&gt;emmm&lt;/p&gt;
+&lt;p&gt;由于没有 F105 的开发板，我便采用了 arduino uno。
+结合 USB Host Shield 和 蓝牙串口模块。&lt;/p&gt;
+&lt;p&gt;USB Host Shield 官方购买连接 &lt;a href=&#34;http://shop.tkjelectronics.dk/product_info.php?products_id=43&#34;&gt;http://shop.tkjelectronics.dk/product_info.php?products_id=43&lt;/a&gt;，官方库（适用于 Arduino）&lt;a href=&#34;https://github.com/felis/USB_Host_Shield_2.0&#34;&gt;https://github.com/felis/USB_Host_Shield_2.0&lt;/a&gt;。该板子使用了 max3421e 芯片。&lt;/p&gt;
+&lt;p&gt;直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。&lt;/p&gt;
+&lt;h1 id=&#34;代码&#34;&gt;代码&lt;/h1&gt;
+&lt;p&gt;前提是安装 USB Host Shield 的库。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;cdcacm.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;usbhub.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//#include &amp;#34;pgmstrings.h&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Satisfy the IDE, which needs to see the include statment in the ino too.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;#ifdef dobogusinclude
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;spi4teensy3.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;SPI.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;class &lt;span style=&#34;color:#99f&#34;&gt;ACMAsyncOper&lt;/span&gt; : public CDCAsyncOper
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#99f&#34;&gt;public&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;OnInit&lt;/span&gt;(ACM &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt;pacm);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; ACMAsyncOper&lt;span style=&#34;color:#555&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;OnInit&lt;/span&gt;(ACM &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt;pacm)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Set DTR = 1 RTS=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;  rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pacm&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;SetControlLineState&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SetControlLineState&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  LINE_CODING  lc;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.dwDTERate  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;115200&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bCharFormat  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bParityType  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bDataBits  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;8&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pacm&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;SetLineCoding&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;lc);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SetLineCoding&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;USB     Usb;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//USBHub     Hub(&amp;amp;Usb);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;ACMAsyncOper  AsyncOper;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ACM           &lt;span style=&#34;color:#c0f&#34;&gt;Acm&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;Usb, &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;AsyncOper);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;setup&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Serial.&lt;span style=&#34;color:#c0f&#34;&gt;begin&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;115200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#if !defined(__MIPSEL__)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#555&#34;&gt;!&lt;/span&gt;Serial); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;  Serial.&lt;span style=&#34;color:#c0f&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Start&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (Usb.&lt;span style=&#34;color:#c0f&#34;&gt;Init&lt;/span&gt;() &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Serial.&lt;span style=&#34;color:#c0f&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;OSCOKIRQ failed to assert&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;( &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; datas[&lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;loop&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Usb.&lt;span style=&#34;color:#c0f&#34;&gt;Task&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; ( Acm.&lt;span style=&#34;color:#c0f&#34;&gt;isReady&lt;/span&gt;()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; send_count &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; (Serial.&lt;span style=&#34;color:#c0f&#34;&gt;available&lt;/span&gt;() &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; send_count &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      datas[send_count] &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Serial.&lt;span style=&#34;color:#c0f&#34;&gt;read&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      send_count&lt;span style=&#34;color:#555&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (send_count) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Acm.&lt;span style=&#34;color:#c0f&#34;&gt;SndData&lt;/span&gt;(send_count, datas);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SndData&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;20&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;  buf[&lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint16_t&lt;/span&gt; rcvd &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Acm.&lt;span style=&#34;color:#c0f&#34;&gt;RcvData&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;rcvd, buf);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rcode &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; hrNAK)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Ret&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; ( rcvd ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Serial.&lt;span style=&#34;color:#c0f&#34;&gt;write&lt;/span&gt;(buf, rcvd);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;20&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

@@ -6,30 +6,76 @@
     <description>Recent content in 树莓派 on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 18:27:23 +0800</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 18:27:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://gomi1992.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>我和树莓派</title>
       <link>https://gomi1992.github.io/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
       <pubDate>Wed, 17 Nov 2021 18:27:23 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
-      <description>树莓派 我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。
-做个 nas 吧，说实话我没那么强烈的需求。
-做个摄像头监控服务器，我暂时没那么多财产需要监控。
-那做个提升自己效率的工具如何？
-也不是不行。
-选择树莓派做这些事的原因也比较简单。
-现成的。 功耗相对较低。 资料较多（主要是没那么多精力去折腾）。 docker 与 portainer 与 duplicati 这我就不多介绍了。
-docker 跑容器，portainer 管理 docker，duplicati 备份数据。
-在使用 docker 时有一点需要注意，使用 u 盘存储数据时，最好不要使用 fat32，建议使用 ext4 等格式。
-我在一开始，使用 fat32 格式的 u 盘，部署 docker+mysql，给 mysql 的数据分配到 u 盘上，mysql 死活无法启动，log 显示 mysql 容器卡在修改文件夹权限那里了，将 U 盘格式从 fat32 换到 ext4 后，就没问题了。
-多功能笔记工具 虽然我文笔不行，但是我还是喜欢写点东西记录下。
-而且我喜欢搜藏，浏览器里的书签已经让我无法顺利查找了。
-我也曾想过自己写一个更强大的书签整理工具。
-在我使用 notion 作为书签整理工具后，我发现，notion 还能保存网页。那我为什么要再造一个轮子呢？
-那使用 notion 就可以了，那跟树莓派有什么关系呢？
-notion 固然强大，可是数据始终存放在别人那里，而我喜欢把数据握在自己手里。
-于是我选择在树莓派上部署 trilium notes。</description>
+      <description>&lt;h2 id=&#34;树莓派&#34;&gt;树莓派&lt;/h2&gt;
+&lt;p&gt;我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。&lt;/p&gt;
+&lt;p&gt;做个 nas 吧，说实话我没那么强烈的需求。&lt;/p&gt;
+&lt;p&gt;做个摄像头监控服务器，我暂时没那么多财产需要监控。&lt;/p&gt;
+&lt;p&gt;那做个提升自己效率的工具如何？&lt;/p&gt;
+&lt;p&gt;也不是不行。&lt;/p&gt;
+&lt;p&gt;选择树莓派做这些事的原因也比较简单。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;现成的。&lt;/li&gt;
+&lt;li&gt;功耗相对较低。&lt;/li&gt;
+&lt;li&gt;资料较多（主要是没那么多精力去折腾）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;docker-与-portainer-与-duplicati&#34;&gt;docker 与 portainer 与 duplicati&lt;/h2&gt;
+&lt;p&gt;这我就不多介绍了。&lt;/p&gt;
+&lt;p&gt;docker 跑容器，portainer 管理 docker，duplicati 备份数据。&lt;/p&gt;
+&lt;p&gt;在使用 docker 时有一点需要注意，使用 u 盘存储数据时，最好不要使用 fat32，建议使用 ext4 等格式。&lt;/p&gt;
+&lt;p&gt;我在一开始，使用 fat32 格式的 u 盘，部署 docker+mysql，给 mysql 的数据分配到 u 盘上，mysql 死活无法启动，log 显示 mysql 容器卡在修改文件夹权限那里了，将 U 盘格式从 fat32 换到 ext4 后，就没问题了。&lt;/p&gt;
+&lt;h2 id=&#34;多功能笔记工具&#34;&gt;多功能笔记工具&lt;/h2&gt;
+&lt;p&gt;虽然我文笔不行，但是我还是喜欢写点东西记录下。&lt;/p&gt;
+&lt;p&gt;而且我喜欢搜藏，浏览器里的书签已经让我无法顺利查找了。&lt;/p&gt;
+&lt;p&gt;我也曾想过自己写一个更强大的书签整理工具。&lt;/p&gt;
+&lt;p&gt;在我使用 notion 作为书签整理工具后，我发现，notion 还能保存网页。那我为什么要再造一个轮子呢？&lt;/p&gt;
+&lt;p&gt;那使用 notion 就可以了，那跟树莓派有什么关系呢？&lt;/p&gt;
+&lt;p&gt;notion 固然强大，可是数据始终存放在别人那里，而我喜欢把数据握在自己手里。&lt;/p&gt;
+&lt;p&gt;于是我选择在树莓派上部署 trilium notes。&lt;/p&gt;
+&lt;p&gt;相对于其他笔记应用来说，我认为有以下优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以自己部署服务器。&lt;/li&gt;
+&lt;li&gt;有网页 Clipper 插件。&lt;/li&gt;
+&lt;li&gt;文章可以互相关联。&lt;/li&gt;
+&lt;li&gt;更好灵活性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然也有缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;迷之同步功能。&lt;/li&gt;
+&lt;li&gt;数据不是原视方式存储，而是存放在数据库中。&lt;/li&gt;
+&lt;li&gt;不支持 webdav 等存储方式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;正是有以上特点，我选择将它部署在树莓派上，当然部署在云服务器上也是可以的。&lt;/p&gt;
+&lt;h2 id=&#34;做个时间管理大师&#34;&gt;做个时间管理大师&lt;/h2&gt;
+&lt;p&gt;emmm，时间管理大师。。。&lt;/p&gt;
+&lt;p&gt;在读了《奇特的一生》后，我想践行一下时间管理法。&lt;/p&gt;
+&lt;p&gt;如何践行？真的拿纸笔去记录么？&lt;/p&gt;
+&lt;p&gt;这些时间记录，有部分是比较隐私的。&lt;/p&gt;
+&lt;p&gt;万一让别人看到了我的小秘密怎么办？&lt;/p&gt;
+&lt;p&gt;万一我骗朋友去打游戏，而自己却努力刷题的事暴露了怎么办？&lt;/p&gt;
+&lt;p&gt;再说了，自己那甲骨文字体根本见不得人啊。&lt;/p&gt;
+&lt;p&gt;时间管理类应用多是番茄钟之类的，精细化管理工具不多。&lt;/p&gt;
+&lt;p&gt;我从腾讯开源应用中心里发现了 kimai 这个应用，但是腾讯还没正式上架这个应用。&lt;/p&gt;
+&lt;p&gt;我准备自己部署到树莓派上体验一下，于是出现了前面提到的 mysql 部署失败的事情。&lt;/p&gt;
+&lt;p&gt;部署成功后，问题来了，怎么可以这么慢？看来 kimai 对于树莓派来说还不够轻量。&lt;/p&gt;
+&lt;p&gt;于是我尝试使用 timetagger。&lt;/p&gt;
+&lt;p&gt;轻量、简洁、好用。但是有点过于简洁，甚至连登录功能都要自己去实现，这是不是有点不太友好。&lt;/p&gt;
+&lt;p&gt;于是我自己修改了下，支持登录功能，以及一个伪 TOTP 功能。&lt;/p&gt;
+&lt;p&gt;参考 我的博文 timetagger 定制。&lt;/p&gt;
+&lt;p&gt;在移动端的感觉也不错哦，推荐一试。&lt;/p&gt;
+&lt;h2 id=&#34;还有其他的么&#34;&gt;还有其他的么&lt;/h2&gt;
+&lt;p&gt;正在努力完善中。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

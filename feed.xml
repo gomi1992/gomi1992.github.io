@@ -6,20 +6,171 @@
     <description>Recent content on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Nov 2022 09:47:08 +0000</lastBuildDate><atom:link href="https://gomi1992.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 09:47:08 +0000</lastBuildDate>
+    
+	<atom:link href="https://gomi1992.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>我的个人计划表</title>
       <link>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</link>
       <pubDate>Mon, 07 Nov 2022 09:47:08 +0000</pubDate>
       
       <guid>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</guid>
-      <description>起因 想把自己的工作计划在网页里展示出来，方便监督自己。
-想法 plantuml、mermaid、excalidraw都是不错的工具。
-plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。
-excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。
-有了想法就开工。
-集成mermaid mermaid提供js脚本，可以直接集成到网页中。
-&amp;lt;div id=&amp;#34;mermaid-gantt&amp;#34; class=&amp;#34;mermaid&amp;#34;&amp;gt; gantt dateFormat YYYY-MM-DD axisFormat %y/%d/%m title Schedule excludes weekdays section 个人安排网页&amp;lt;br&amp;gt;开发 集成甘特图 : done, 2022-11-02,3h &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/mermaid.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; window.onload = function () { mermaid.initialize({ theme: &amp;#39;forest&amp;#39;, // themeCSS: &amp;#39;.node rect { fill: red; }&amp;#39;, logLevel: 3, securityLevel: &amp;#39;loose&amp;#39;, flowchart: {curve: &amp;#39;basis&amp;#39;}, gantt: {axisFormat: &amp;#39;%m/%d/%Y&amp;#39;}, sequence: {actorMargin: 50}, // sequenceDiagram: { actorMargin: 300 } // deprecated }); } &amp;lt;/script&amp;gt; 集成excalidraw 方案1--分享链接集成 这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。 每回修改白板后就把新的链接更新到代码中即可。</description>
+      <description>&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+&lt;p&gt;想把自己的工作计划在网页里展示出来，方便监督自己。&lt;/p&gt;
+&lt;h1 id=&#34;想法&#34;&gt;想法&lt;/h1&gt;
+&lt;p&gt;plantuml、mermaid、excalidraw都是不错的工具。&lt;/p&gt;
+&lt;p&gt;plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。&lt;/p&gt;
+&lt;p&gt;excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。&lt;/p&gt;
+&lt;p&gt;有了想法就开工。&lt;/p&gt;
+&lt;h1 id=&#34;集成mermaid&#34;&gt;集成mermaid&lt;/h1&gt;
+&lt;p&gt;mermaid提供js脚本，可以直接集成到网页中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid-gantt&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gantt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dateFormat  YYYY-MM-DD
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    axisFormat  %y/%d/%m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    title       Schedule
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    excludes    weekdays
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    section 个人安排网页&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;br&lt;/span&gt;&amp;gt;开发
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    集成甘特图                      : done, 2022-11-02,3h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;js/mermaid.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#366&#34;&gt;window&lt;/span&gt;.onload &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        mermaid.initialize({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            theme&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;forest&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// themeCSS: &amp;#39;.node rect { fill: red; }&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            logLevel&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            securityLevel&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;loose&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            flowchart&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {curve&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;basis&amp;#39;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            gantt&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {axisFormat&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;%m/%d/%Y&amp;#39;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sequence&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {actorMargin&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;50&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// sequenceDiagram: { actorMargin: 300 } // deprecated
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;集成excalidraw&#34;&gt;集成excalidraw&lt;/h1&gt;
+&lt;h2 id=&#34;方案1--分享链接集成&#34;&gt;方案1--分享链接集成&lt;/h2&gt;
+&lt;p&gt;这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。
+每回修改白板后就把新的链接更新到代码中即可。&lt;/p&gt;
+&lt;p&gt;最后并没有采用这个方案，原因在于数据不在自己手上。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这个方案并没有真正测试过，可能也会出现方案2的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;方案2--实时写作集成&#34;&gt;方案2--实时写作集成&lt;/h2&gt;
+&lt;p&gt;集成失败，由于部署环境没有部署https，所以静态页的安全上下文（&lt;a href=&#34;https://w3c.github.io/webappsec-secure-contexts/&#34;&gt;secure context&lt;/a&gt;）为不安全。
+因此，嵌在静态页中的iframe的安全上下文也为不安全。&lt;/p&gt;
+&lt;p&gt;这个安全上下文不安全导致excalidraw的实时写作无法使用加密信道。&lt;/p&gt;
+&lt;h2 id=&#34;方案3--使用静态数据由kroki渲染&#34;&gt;方案3--使用静态数据由kroki渲染&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kroki.io/&#34;&gt;kroki&lt;/a&gt;提供一堆各种图的在线渲染，将数据给他，他给你一个svg，就是这么简单，但是数据存在泄露的风险。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;有严重缺陷，kroki仅支持4096字节长度的数据渲染，一旦图大了也就无法渲染。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; textEncode(str) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#366&#34;&gt;window&lt;/span&gt;.TextEncoder) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; TextEncoder(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;).encode(str);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; utf8 &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; unescape(&lt;span style=&#34;color:#366&#34;&gt;encodeURIComponent&lt;/span&gt;(str));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Uint8Array(utf8.length);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; utf8.length; i&lt;span style=&#34;color:#555&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        result[i] &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; utf8.charCodeAt(i);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 数据编码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; textEncode(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;your data here&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 数据压缩
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; compressed &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pako.deflate(data, {level&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt;, to&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;string&amp;#39;&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; btoa(compressed)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .replace(&lt;span style=&#34;color:#3aa&#34;&gt;/\+/g&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;).replace(&lt;span style=&#34;color:#3aa&#34;&gt;/\//g&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; kroki_url &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;https://kroki.io/excalidraw/svg/&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; result;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 请求svg
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;request.open(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, kroki_url, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;request.send(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (request.status &lt;span style=&#34;color:#555&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 向div中插入svg
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;excalidraw&amp;#34;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; request.responseText;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;方案4&#34;&gt;方案4&lt;/h2&gt;
+&lt;p&gt;将excalidraw转为SVG。&lt;/p&gt;
+&lt;p&gt;使用前端库&lt;a href=&#34;https://www.npmjs.com/package/@excalidraw/utils&#34;&gt;excalidraw/utils&lt;/a&gt;将excalidraw转换为svg，插入到网页中。&lt;/p&gt;
+&lt;p&gt;官方的示例代码有点问题，正确的如下。需要注意的地方是，不能直接传入string作为参数，需要将string转换成结构体传入（excalidraw数据本身就是json格式）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; loadExcalidraw() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; request &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; XMLHttpRequest();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    request.open(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;/data/schedule.excalidraw&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    request.send(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (request.status &lt;span style=&#34;color:#555&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;eval&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;(&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; request.responseText &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;)&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; svg &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; exportToSvg(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        svg.then((value) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            console.log(value);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;excalidraw&amp;#34;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; value.outerHTML;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;在线编辑&#34;&gt;在线编辑&lt;/h1&gt;
+&lt;p&gt;在github上打开项目，将com改为dev或者按一下“.”就可以进入GitHub.dev在线编辑环境，在其中安装excalidraw和mardown preview插件（网页端渲染mermaid还暂时不支持），就可以在线编辑excalidraw，还有预览mermaid图了。&lt;/p&gt;
+&lt;h1 id=&#34;持续部署&#34;&gt;持续部署&lt;/h1&gt;
+&lt;p&gt;因为是静态网页，所谓的部署也就是把最新的网页拉取回来。
+没有将静态页打包成docker镜像，若采用docker打包，则需要拉取 镜像--停止旧容器--运行新容器--删除旧镜像 这一系列操作；远不如本地部署nginx，更新对应的web资源目录来的方便。&lt;/p&gt;
+&lt;p&gt;触发使用github webhook触发，这里没有选择写个简单web服务通过内网穿透暴露到互联网上，主要担心内网穿透服务不稳定。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ntfy.sh/&#34;&gt;ntfy&lt;/a&gt;是一个消息发布、订阅的工具，原本我是想用telegram来打通树莓派和github的，但是telegram不支持两个bot间通信。
+在ntfy官方服务器中发布消息，你得先有一个主题，这个主题任何人都可以订阅、发布（没错，官方服务器就是这么设定的，想使用权限，你需要自己部署），所以起一个又长又难猜的主题吧。消息发布、和接受文档里都写得非常详细，不再赘述。&lt;/p&gt;
+&lt;p&gt;我这里使用python去轮询ntfy接口收取消息，并加上了访问频率限制，未对消息内容做检查，因为用不上，反正做的操作也是从github拉取项目。&lt;/p&gt;
+&lt;p&gt;注：github webhook支持内容验证，ntfy不能与之对接，得自己写web服务对接，所以这一点来说，ntfy有很大缺点。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;time&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;requests&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;requests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;RateLimiter&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;capacity &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;rate &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0.25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;control&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        now &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;min&lt;/span&gt;(self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;capacity, self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;int&lt;/span&gt;(now &lt;span style=&#34;color:#555&#34;&gt;-&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp) &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;rate)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; now
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rateLimiter &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; RateLimiter()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;last_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;True&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        tmp_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        resp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;get(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://ntfy.sh/yourtopic/json?poll=1&amp;amp;since=&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;str&lt;/span&gt;(&lt;span style=&#34;color:#366&#34;&gt;int&lt;/span&gt;(last_time)), stream&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        last_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; tmp_time
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;in&lt;/span&gt; resp&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;iter_lines():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; line:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; json&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;loads(line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; data[&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;event&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;message&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; data[&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;message&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;Update finish&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; rateLimiter&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;control():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;get message&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        os&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;system(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;git pull&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        requests&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;post(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://ntfy.sh/yourtopic&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            data&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Update finish&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;encode(encoding&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; e:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(e)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;实现效果&#34;&gt;实现效果&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -28,17 +179,46 @@ excalidraw是个非常自由的白板，本打算使用多人协作方式集成�
       <pubDate>Sun, 24 Jul 2022 08:19:14 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2022/07/24/20220724_inoreader%E4%B8%AD%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</guid>
-      <description>过时的RSS 现在用RSS追资讯的人可能不多了。 RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。 随着google reader的关闭，我现在用的最多的阅读器就是inoreader了。
-过时的订阅源 现在新兴的媒体基本都不提供RSS订阅方式，毕竟用RSS没法看到他们的广告，也没法去产生各种联动，提高他们的效益。 于是诞生了RSSHub这样的项目，让我们能够用RSS跟上时代。
-inoreader的痛 inoreader免费版对于我已经够用了，但是仍存在一点点小问题。 比如我没办法在inoreader中阅读cnbeta的全文，必须得离开rss阅读器。 于是我开始寻求解决方案，比如寻找其他的阅读器作为替代。 但成效甚微，不是不支持阅读区内全文阅读，就是限制太多（需要付费）。
-柳暗花明 放弃寻找阅读器替换这条路后，我试着寻找油猴脚本来辅助，也确实找到了一个比较适合我的脚本InoReader Full Feed。 为什么说比较适合呢？因为我的需求很简单，只需要能够以iframe的方式将目标网页嵌入阅读器就可以，而这款脚本的功能超乎了我的想象。 于是我也毫不留情，开始简单粗暴的改造。
-在其代码1.06版本上，第1716行(initFullFeed函数中)后插入如下代码。
-for(var i=0,j=c.articleContainer.children.length;i&amp;lt;j;i++){ c.articleContainer.removeChild(c.articleContainer.children[0]); } var p = document.createElement(&amp;#34;iframe&amp;#34;); p.setAttribute(&amp;#34;src&amp;#34;,c.itemURL); p.style.width=&amp;#34;100%&amp;#34;; p.style.height=&amp;#34;1000px&amp;#34;; c.articleContainer.appendChild(p); return; 插入后如下图
-这段代码先删除文章内的已有元素，然后插入一个iframe元素到文章界面中，并频闭掉剩下的代码。
-不完整的美 出于安全性考虑，浏览器禁止向iframe中传入cookie，这就导致一些小功能不好实现。
-小trick01 在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。
-&amp;lt;meta name=&amp;#34;referrer&amp;#34; content=&amp;#34;no-referrer&amp;#34;&amp;gt; 当然，已经有人在油猴脚本中实现了显示防盗链图片 for Inoreader。
-小trick02 小trick01并不完美，在inoreader中缩略图仍没法加载。 有个办法可以解决，在发送请求时拦截请求，去掉header中的referrer。 浏览器中可以使用ModHeader和requestly.io等插件完成上述功能。</description>
+      <description>&lt;h1 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h1&gt;
+&lt;p&gt;现在用RSS追资讯的人可能不多了。
+RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
+随着google reader的关闭，我现在用的最多的阅读器就是&lt;a href=&#34;https://www.inoreader.com/&#34;&gt;inoreader&lt;/a&gt;了。&lt;/p&gt;
+&lt;h1 id=&#34;过时的订阅源&#34;&gt;过时的订阅源&lt;/h1&gt;
+&lt;p&gt;现在新兴的媒体基本都不提供RSS订阅方式，毕竟用RSS没法看到他们的广告，也没法去产生各种联动，提高他们的效益。
+于是诞生了&lt;a href=&#34;https://github.com/DIYgod/RSSHub&#34;&gt;RSSHub&lt;/a&gt;这样的项目，让我们能够用RSS跟上时代。&lt;/p&gt;
+&lt;h1 id=&#34;inoreader的痛&#34;&gt;inoreader的痛&lt;/h1&gt;
+&lt;p&gt;inoreader免费版对于我已经够用了，但是仍存在一点点小问题。
+比如我没办法在inoreader中阅读cnbeta的全文，必须得离开rss阅读器。
+于是我开始寻求解决方案，比如寻找其他的阅读器作为替代。
+但成效甚微，不是不支持阅读区内全文阅读，就是限制太多（需要付费）。&lt;/p&gt;
+&lt;h1 id=&#34;柳暗花明&#34;&gt;柳暗花明&lt;/h1&gt;
+&lt;p&gt;放弃寻找阅读器替换这条路后，我试着寻找油猴脚本来辅助，也确实找到了一个比较适合我的脚本&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/897-inoreader-full-feed&#34;&gt;InoReader Full Feed&lt;/a&gt;。
+为什么说比较适合呢？因为我的需求很简单，只需要能够以iframe的方式将目标网页嵌入阅读器就可以，而这款脚本的功能超乎了我的想象。
+于是我也毫不留情，开始简单粗暴的改造。&lt;/p&gt;
+&lt;p&gt;在其代码1.06版本上，第1716行(initFullFeed函数中)后插入如下代码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; i&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;,j&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;c.articleContainer.children.length;i&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;j;i&lt;span style=&#34;color:#555&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        c.articleContainer.removeChild(c.articleContainer.children[&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; p &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.createElement(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;iframe&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p.setAttribute(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;src&amp;#34;&lt;/span&gt;,c.itemURL);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p.style.width&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;100%&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p.style.height&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;1000px&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c.articleContainer.appendChild(p);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;插入后如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202207240844928.png&#34; alt=&#34;插入后效果&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这段代码先删除文章内的已有元素，然后插入一个iframe元素到文章界面中，并频闭掉剩下的代码。&lt;/p&gt;
+&lt;h1 id=&#34;不完整的美&#34;&gt;不完整的美&lt;/h1&gt;
+&lt;p&gt;出于安全性考虑，浏览器禁止向iframe中传入cookie，这就导致一些小功能不好实现。&lt;/p&gt;
+&lt;h1 id=&#34;小trick01&#34;&gt;小trick01&lt;/h1&gt;
+&lt;p&gt;在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;referrer&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;no-referrer&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当然，已经有人在油猴脚本中实现了&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader&#34;&gt;显示防盗链图片 for Inoreader&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;小trick02&#34;&gt;小trick02&lt;/h1&gt;
+&lt;p&gt;小trick01并不完美，在inoreader中缩略图仍没法加载。
+有个办法可以解决，在发送请求时拦截请求，去掉header中的referrer。
+浏览器中可以使用&lt;a href=&#34;https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj&#34;&gt;ModHeader&lt;/a&gt;和&lt;a href=&#34;https://chrome.google.com/webstore/detail/redirect-url-modify-heade/mdnleldcmiljblolnjhpnblkcekpdkpa&#34;&gt;requestly.io&lt;/a&gt;等插件完成上述功能。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -47,23 +227,65 @@ for(var i=0,j=c.articleContainer.children.length;i&amp;lt;j;i++){ c.articleConta
       <pubDate>Wed, 17 Nov 2021 18:27:23 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
-      <description>树莓派 我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。
-做个 nas 吧，说实话我没那么强烈的需求。
-做个摄像头监控服务器，我暂时没那么多财产需要监控。
-那做个提升自己效率的工具如何？
-也不是不行。
-选择树莓派做这些事的原因也比较简单。
-现成的。 功耗相对较低。 资料较多（主要是没那么多精力去折腾）。 docker 与 portainer 与 duplicati 这我就不多介绍了。
-docker 跑容器，portainer 管理 docker，duplicati 备份数据。
-在使用 docker 时有一点需要注意，使用 u 盘存储数据时，最好不要使用 fat32，建议使用 ext4 等格式。
-我在一开始，使用 fat32 格式的 u 盘，部署 docker+mysql，给 mysql 的数据分配到 u 盘上，mysql 死活无法启动，log 显示 mysql 容器卡在修改文件夹权限那里了，将 U 盘格式从 fat32 换到 ext4 后，就没问题了。
-多功能笔记工具 虽然我文笔不行，但是我还是喜欢写点东西记录下。
-而且我喜欢搜藏，浏览器里的书签已经让我无法顺利查找了。
-我也曾想过自己写一个更强大的书签整理工具。
-在我使用 notion 作为书签整理工具后，我发现，notion 还能保存网页。那我为什么要再造一个轮子呢？
-那使用 notion 就可以了，那跟树莓派有什么关系呢？
-notion 固然强大，可是数据始终存放在别人那里，而我喜欢把数据握在自己手里。
-于是我选择在树莓派上部署 trilium notes。</description>
+      <description>&lt;h2 id=&#34;树莓派&#34;&gt;树莓派&lt;/h2&gt;
+&lt;p&gt;我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。&lt;/p&gt;
+&lt;p&gt;做个 nas 吧，说实话我没那么强烈的需求。&lt;/p&gt;
+&lt;p&gt;做个摄像头监控服务器，我暂时没那么多财产需要监控。&lt;/p&gt;
+&lt;p&gt;那做个提升自己效率的工具如何？&lt;/p&gt;
+&lt;p&gt;也不是不行。&lt;/p&gt;
+&lt;p&gt;选择树莓派做这些事的原因也比较简单。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;现成的。&lt;/li&gt;
+&lt;li&gt;功耗相对较低。&lt;/li&gt;
+&lt;li&gt;资料较多（主要是没那么多精力去折腾）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;docker-与-portainer-与-duplicati&#34;&gt;docker 与 portainer 与 duplicati&lt;/h2&gt;
+&lt;p&gt;这我就不多介绍了。&lt;/p&gt;
+&lt;p&gt;docker 跑容器，portainer 管理 docker，duplicati 备份数据。&lt;/p&gt;
+&lt;p&gt;在使用 docker 时有一点需要注意，使用 u 盘存储数据时，最好不要使用 fat32，建议使用 ext4 等格式。&lt;/p&gt;
+&lt;p&gt;我在一开始，使用 fat32 格式的 u 盘，部署 docker+mysql，给 mysql 的数据分配到 u 盘上，mysql 死活无法启动，log 显示 mysql 容器卡在修改文件夹权限那里了，将 U 盘格式从 fat32 换到 ext4 后，就没问题了。&lt;/p&gt;
+&lt;h2 id=&#34;多功能笔记工具&#34;&gt;多功能笔记工具&lt;/h2&gt;
+&lt;p&gt;虽然我文笔不行，但是我还是喜欢写点东西记录下。&lt;/p&gt;
+&lt;p&gt;而且我喜欢搜藏，浏览器里的书签已经让我无法顺利查找了。&lt;/p&gt;
+&lt;p&gt;我也曾想过自己写一个更强大的书签整理工具。&lt;/p&gt;
+&lt;p&gt;在我使用 notion 作为书签整理工具后，我发现，notion 还能保存网页。那我为什么要再造一个轮子呢？&lt;/p&gt;
+&lt;p&gt;那使用 notion 就可以了，那跟树莓派有什么关系呢？&lt;/p&gt;
+&lt;p&gt;notion 固然强大，可是数据始终存放在别人那里，而我喜欢把数据握在自己手里。&lt;/p&gt;
+&lt;p&gt;于是我选择在树莓派上部署 trilium notes。&lt;/p&gt;
+&lt;p&gt;相对于其他笔记应用来说，我认为有以下优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以自己部署服务器。&lt;/li&gt;
+&lt;li&gt;有网页 Clipper 插件。&lt;/li&gt;
+&lt;li&gt;文章可以互相关联。&lt;/li&gt;
+&lt;li&gt;更好灵活性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然也有缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;迷之同步功能。&lt;/li&gt;
+&lt;li&gt;数据不是原视方式存储，而是存放在数据库中。&lt;/li&gt;
+&lt;li&gt;不支持 webdav 等存储方式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;正是有以上特点，我选择将它部署在树莓派上，当然部署在云服务器上也是可以的。&lt;/p&gt;
+&lt;h2 id=&#34;做个时间管理大师&#34;&gt;做个时间管理大师&lt;/h2&gt;
+&lt;p&gt;emmm，时间管理大师。。。&lt;/p&gt;
+&lt;p&gt;在读了《奇特的一生》后，我想践行一下时间管理法。&lt;/p&gt;
+&lt;p&gt;如何践行？真的拿纸笔去记录么？&lt;/p&gt;
+&lt;p&gt;这些时间记录，有部分是比较隐私的。&lt;/p&gt;
+&lt;p&gt;万一让别人看到了我的小秘密怎么办？&lt;/p&gt;
+&lt;p&gt;万一我骗朋友去打游戏，而自己却努力刷题的事暴露了怎么办？&lt;/p&gt;
+&lt;p&gt;再说了，自己那甲骨文字体根本见不得人啊。&lt;/p&gt;
+&lt;p&gt;时间管理类应用多是番茄钟之类的，精细化管理工具不多。&lt;/p&gt;
+&lt;p&gt;我从腾讯开源应用中心里发现了 kimai 这个应用，但是腾讯还没正式上架这个应用。&lt;/p&gt;
+&lt;p&gt;我准备自己部署到树莓派上体验一下，于是出现了前面提到的 mysql 部署失败的事情。&lt;/p&gt;
+&lt;p&gt;部署成功后，问题来了，怎么可以这么慢？看来 kimai 对于树莓派来说还不够轻量。&lt;/p&gt;
+&lt;p&gt;于是我尝试使用 timetagger。&lt;/p&gt;
+&lt;p&gt;轻量、简洁、好用。但是有点过于简洁，甚至连登录功能都要自己去实现，这是不是有点不太友好。&lt;/p&gt;
+&lt;p&gt;于是我自己修改了下，支持登录功能，以及一个伪 TOTP 功能。&lt;/p&gt;
+&lt;p&gt;参考 我的博文 timetagger 定制。&lt;/p&gt;
+&lt;p&gt;在移动端的感觉也不错哦，推荐一试。&lt;/p&gt;
+&lt;h2 id=&#34;还有其他的么&#34;&gt;还有其他的么&lt;/h2&gt;
+&lt;p&gt;正在努力完善中。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -72,17 +294,40 @@ notion 固然强大，可是数据始终存放在别人那里，而我喜欢把�
       <pubDate>Wed, 17 Nov 2021 18:11:56 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2021/11/17/20211117_timetagger%E5%AE%9A%E5%88%B6/</guid>
-      <description>为什么选择 timetagger 树莓派 3B 可能只带的动这个应用，更新版本的可能跑得动其他的。像 kimai 等可能跑不起来。
-为什么要定制 timetagger 没有提供登录功能，或者说登录功能太简陋，于是需要自行定制。
-如何定制 定制界面 把官方自带的界面 copy 到自己 pages 目录下。
-修改 login.md，所有的登录请求都是到这个界面下完成的，所以需要修改它，给它增加登录表单，具体细节看源码。
-totp 工具 import pyotp username = &amp;#34;your_username&amp;#34; gtoken = pyotp.random_base32(64) data = pyotp.totp.TOTP(gtoken).provisioning_uri(username, issuer_name=&amp;#34;MyTimeTagger&amp;#34;) print(&amp;#34;gtoken&amp;#34;, gtoken) print(&amp;#34;qrcode data&amp;#34;, data) 生成代码参考python 实现 google authenticator 认证 - Pythia 丶陌乐。
-其中 gtoken 就是 totp 密钥，在 run.py 中用到。
-qrcode data 是用来生成二维码的内容，随便找个工具，用这个内容生成二维码，然后使用 authy 这样的工具扫码即可。
-运行代码 修改静态界面资源到自己的 pages 目录。
-引入 pyotp 包。
-增加一个用户字典，保存用户名、密码、totp 密钥信息。
-修改 webtoken_for_localhost 函数。增加用户登录验证。</description>
+      <description>&lt;h2 id=&#34;为什么选择-timetagger&#34;&gt;为什么选择 timetagger&lt;/h2&gt;
+&lt;p&gt;树莓派 3B 可能只带的动这个应用，更新版本的可能跑得动其他的。像 kimai 等可能跑不起来。&lt;/p&gt;
+&lt;h2 id=&#34;为什么要定制&#34;&gt;为什么要定制&lt;/h2&gt;
+&lt;p&gt;timetagger 没有提供登录功能，或者说登录功能太简陋，于是需要自行定制。&lt;/p&gt;
+&lt;h2 id=&#34;如何定制&#34;&gt;如何定制&lt;/h2&gt;
+&lt;h3 id=&#34;定制界面&#34;&gt;定制界面&lt;/h3&gt;
+&lt;p&gt;把官方自带的界面 copy 到自己 pages 目录下。&lt;/p&gt;
+&lt;p&gt;修改 login.md，所有的登录请求都是到这个界面下完成的，所以需要修改它，给它增加登录表单，具体细节看源码。&lt;/p&gt;
+&lt;h3 id=&#34;totp-工具&#34;&gt;totp 工具&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;import pyotp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;username = &amp;#34;your_username&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gtoken = pyotp.random_base32(64)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data = pyotp.totp.TOTP(gtoken).provisioning_uri(username, issuer_name=&amp;#34;MyTimeTagger&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&amp;#34;gtoken&amp;#34;, gtoken)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&amp;#34;qrcode data&amp;#34;, data)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;生成代码参考&lt;a href=&#34;#root/ZycHBYUoADWo/Vx6AUcpGHodQ/ZXufmBwkSU3E/zXZRGpQeDzVc/wE4RlKFYqoH1/KUQrJURuWW9M&#34;&gt;python 实现 google authenticator 认证 - Pythia 丶陌乐&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;其中 gtoken 就是 totp 密钥，在 run.py 中用到。&lt;/p&gt;
+&lt;p&gt;qrcode data 是用来生成二维码的内容，随便找个工具，用这个内容生成二维码，然后使用 authy 这样的工具扫码即可。&lt;/p&gt;
+&lt;h3 id=&#34;运行代码&#34;&gt;运行代码&lt;/h3&gt;
+&lt;p&gt;修改静态界面资源到自己的 pages 目录。&lt;/p&gt;
+&lt;p&gt;引入 pyotp 包。&lt;/p&gt;
+&lt;p&gt;增加一个用户字典，保存用户名、密码、totp 密钥信息。&lt;/p&gt;
+&lt;p&gt;修改 webtoken_for_localhost 函数。增加用户登录验证。&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
+&lt;p&gt;timetagger 数据默认放在用户目录下的 _timetagger 目录下。&lt;/p&gt;
+&lt;p&gt;可以使用 ln 命令引到其他目录下。&lt;/p&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结&lt;/h2&gt;
+&lt;p&gt;完整代码&lt;a href=&#34;https://github.com/gomi1992/timetagger_app&#34;&gt;https://github.com/gomi1992/timetagger_app&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这不是 totp 的正确使用方式。&lt;/p&gt;
+&lt;p&gt;应该先验证用户名密码，再给界面去输入 totp。&lt;/p&gt;
+&lt;p&gt;但是目前登录逻辑上还是跟这个流程保持一致。&lt;/p&gt;
+&lt;p&gt;timetagger 的简单定制到此为止。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -91,15 +336,123 @@ qrcode data 是用来生成二维码的内容，随便找个工具，用这个�
       <pubDate>Tue, 18 Aug 2020 14:46:19 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2020/08/18/20200818_diy%E9%A3%9E%E6%8E%A7%E8%93%9D%E7%89%99%E8%B0%83%E5%8F%82%E6%A8%A1%E5%9D%97/</guid>
-      <description>SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。
-为什么要 DIY 这玩意 iphone 没法通过 otg 连接飞控 别人家卖的稍微有点贵 原理 单片机作为 USB Host，与飞控通信。 单片机连接蓝牙串口模块，于手机通信。
-实现方案 speedybee 使用 STM32 F105 + TI CC2541 蓝牙。 STM32 F105 无须额外芯片即可作为 USB Host。
-emmm
-由于没有 F105 的开发板，我便采用了 arduino uno。 结合 USB Host Shield 和 蓝牙串口模块。
-USB Host Shield 官方购买连接 http://shop.tkjelectronics.dk/product_info.php?products_id=43，官方库（适用于 Arduino）https://github.com/felis/USB_Host_Shield_2.0。该板子使用了 max3421e 芯片。
-直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。
-代码 前提是安装 USB Host Shield 的库。
-#include &amp;lt;cdcacm.h&amp;gt; #include &amp;lt;usbhub.h&amp;gt; //#include &amp;#34;pgmstrings.h&amp;#34; // Satisfy the IDE, which needs to see the include statment in the ino too.</description>
+      <description>&lt;p&gt;SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;为什么要-diy-这玩意&#34;&gt;为什么要 DIY 这玩意&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;iphone 没法通过 otg 连接飞控&lt;/li&gt;
+&lt;li&gt;别人家卖的稍微有点贵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;
+&lt;p&gt;单片机作为 USB Host，与飞控通信。
+单片机连接蓝牙串口模块，于手机通信。&lt;/p&gt;
+&lt;h1 id=&#34;实现方案&#34;&gt;实现方案&lt;/h1&gt;
+&lt;p&gt;speedybee 使用 STM32 F105 + TI CC2541 蓝牙。
+STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
+&lt;p&gt;emmm&lt;/p&gt;
+&lt;p&gt;由于没有 F105 的开发板，我便采用了 arduino uno。
+结合 USB Host Shield 和 蓝牙串口模块。&lt;/p&gt;
+&lt;p&gt;USB Host Shield 官方购买连接 &lt;a href=&#34;http://shop.tkjelectronics.dk/product_info.php?products_id=43&#34;&gt;http://shop.tkjelectronics.dk/product_info.php?products_id=43&lt;/a&gt;，官方库（适用于 Arduino）&lt;a href=&#34;https://github.com/felis/USB_Host_Shield_2.0&#34;&gt;https://github.com/felis/USB_Host_Shield_2.0&lt;/a&gt;。该板子使用了 max3421e 芯片。&lt;/p&gt;
+&lt;p&gt;直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。&lt;/p&gt;
+&lt;h1 id=&#34;代码&#34;&gt;代码&lt;/h1&gt;
+&lt;p&gt;前提是安装 USB Host Shield 的库。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;cdcacm.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;usbhub.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//#include &amp;#34;pgmstrings.h&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Satisfy the IDE, which needs to see the include statment in the ino too.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;#ifdef dobogusinclude
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;spi4teensy3.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;SPI.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;class &lt;span style=&#34;color:#99f&#34;&gt;ACMAsyncOper&lt;/span&gt; : public CDCAsyncOper
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#99f&#34;&gt;public&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;OnInit&lt;/span&gt;(ACM &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt;pacm);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; ACMAsyncOper&lt;span style=&#34;color:#555&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;OnInit&lt;/span&gt;(ACM &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt;pacm)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Set DTR = 1 RTS=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;  rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pacm&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;SetControlLineState&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SetControlLineState&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  LINE_CODING  lc;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.dwDTERate  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;115200&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bCharFormat  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bParityType  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  lc.bDataBits  &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;8&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pacm&lt;span style=&#34;color:#555&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#c0f&#34;&gt;SetLineCoding&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;lc);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SetLineCoding&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;USB     Usb;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;//USBHub     Hub(&amp;amp;Usb);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;ACMAsyncOper  AsyncOper;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ACM           &lt;span style=&#34;color:#c0f&#34;&gt;Acm&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;Usb, &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;AsyncOper);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;setup&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Serial.&lt;span style=&#34;color:#c0f&#34;&gt;begin&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;115200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#if !defined(__MIPSEL__)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#555&#34;&gt;!&lt;/span&gt;Serial); &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;&lt;/span&gt;  Serial.&lt;span style=&#34;color:#c0f&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Start&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (Usb.&lt;span style=&#34;color:#c0f&#34;&gt;Init&lt;/span&gt;() &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Serial.&lt;span style=&#34;color:#c0f&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;OSCOKIRQ failed to assert&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;( &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; datas[&lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;loop&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Usb.&lt;span style=&#34;color:#c0f&#34;&gt;Task&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; ( Acm.&lt;span style=&#34;color:#c0f&#34;&gt;isReady&lt;/span&gt;()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; rcode;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; send_count &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; (Serial.&lt;span style=&#34;color:#c0f&#34;&gt;available&lt;/span&gt;() &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; send_count &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      datas[send_count] &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Serial.&lt;span style=&#34;color:#c0f&#34;&gt;read&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      send_count&lt;span style=&#34;color:#555&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (send_count) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Acm.&lt;span style=&#34;color:#c0f&#34;&gt;SndData&lt;/span&gt;(send_count, datas);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;SndData&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;20&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;  buf[&lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint16_t&lt;/span&gt; rcvd &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;64&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    rcode &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; Acm.&lt;span style=&#34;color:#c0f&#34;&gt;RcvData&lt;/span&gt;(&lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&lt;/span&gt;rcvd, buf);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (rcode &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rcode &lt;span style=&#34;color:#555&#34;&gt;!=&lt;/span&gt; hrNAK)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ErrorMessage&lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#078;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#c0f&#34;&gt;PSTR&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Ret&amp;#34;&lt;/span&gt;), rcode);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; ( rcvd ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Serial.&lt;span style=&#34;color:#c0f&#34;&gt;write&lt;/span&gt;(buf, rcvd);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#c0f&#34;&gt;delay&lt;/span&gt;(&lt;span style=&#34;color:#f60&#34;&gt;20&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -108,14 +461,63 @@ USB Host Shield 官方购买连接 http://shop.tkjelectronics.dk/product_info.ph
       <pubDate>Sat, 01 Feb 2020 16:31:15 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2020/02/01/20200201_dji-fpv%E9%81%A5%E6%8E%A7%E6%94%B9%E4%B8%AD%E5%9B%BD%E6%89%8B/</guid>
-      <description>DJI FPV 遥控器如何设置成中国手使用方式。
-入手 DJI FPV 老早大疆就发布了主要应用在穿越机上的图传设备--DJI FPV，我馋了好久，碍于钱包，一直没入手。 前段时间，我终于狠下心买了一套--天空端加遥控器，接着问题来了。 我因为种种原因，从入模坑时就是中国手了，这回买的 DJI 遥控是日本手的。 我本以为这个遥控具有丰富的自定义功能，或者能够很快速的设置为中国手。 结果证明我错了。
-在我装完飞机后，我无奈的发现我没找到改中国手的地方。
-是时候发挥广大人民群众的智慧了。
-在发挥之前，需要科普一下遥控的几个通道。
-航模通道 通道名 含义 A(Aileron) 横滚，副翼 E(Elevator) 俯仰，升降 R(Rudder) 方向，方向舵 T(Throttle) 油门 我们遥控的两个摇杆能够控制上表中的四个通道。 在大多数遥控中没有直接修改遥感与 AETR 对应方式的地方，但是可以通过修改 mode 来达到效果，比如 mode2 对应美国手。 而在 opentx 系统的遥控中可以随意修改 AETR 的对应方式，实在是非常灵活。
-在飞控中修改通道映射 既然我们无法从遥控器设置那里突破，拆遥控也解决不了问题，那飞控呢？ 目前穿越机主流的固件 betaflight、inav 固件都提供通道自定义映射的功能。 以 bf 为例，bf 默认通道映射是 AETR1234，后面的 1234 暂时不用管。 我们日本手的 DJI 遥控连上了后，通道都是正确的，但我想要中国手，也就是横滚和方向需要互换。 那就把 AETR1234 改成 RETA1234 就可以了。 bf 配置器中没有提供直接修改的地方，需要使用命令修改。 在配置器中进入 cli 模式。 输入
-map RETA1234 并按下回车。 再输入</description>
+      <description>&lt;p&gt;DJI FPV 遥控器如何设置成中国手使用方式。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;入手-dji-fpv&#34;&gt;入手 DJI FPV&lt;/h1&gt;
+&lt;p&gt;老早大疆就发布了主要应用在穿越机上的图传设备--DJI FPV，我馋了好久，碍于钱包，一直没入手。
+前段时间，我终于狠下心买了一套--天空端加遥控器，接着问题来了。
+我因为种种原因，从入模坑时就是中国手了，这回买的 DJI 遥控是日本手的。
+我本以为这个遥控具有丰富的自定义功能，或者能够很快速的设置为中国手。
+结果证明我错了。&lt;/p&gt;
+&lt;p&gt;在我装完飞机后，我无奈的发现我没找到改中国手的地方。&lt;/p&gt;
+&lt;p&gt;是时候发挥广大人民群众的智慧了。&lt;/p&gt;
+&lt;p&gt;在发挥之前，需要科普一下遥控的几个通道。&lt;/p&gt;
+&lt;h1 id=&#34;航模通道&#34;&gt;航模通道&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;通道名&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A(Aileron)&lt;/td&gt;
+&lt;td&gt;横滚，副翼&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;E(Elevator)&lt;/td&gt;
+&lt;td&gt;俯仰，升降&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;R(Rudder)&lt;/td&gt;
+&lt;td&gt;方向，方向舵&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;T(Throttle)&lt;/td&gt;
+&lt;td&gt;油门&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;我们遥控的两个摇杆能够控制上表中的四个通道。
+在大多数遥控中没有直接修改遥感与 AETR 对应方式的地方，但是可以通过修改 mode 来达到效果，比如 mode2 对应美国手。
+而在 opentx 系统的遥控中可以随意修改 AETR 的对应方式，实在是非常灵活。&lt;/p&gt;
+&lt;h1 id=&#34;在飞控中修改通道映射&#34;&gt;在飞控中修改通道映射&lt;/h1&gt;
+&lt;p&gt;既然我们无法从遥控器设置那里突破，拆遥控也解决不了问题，那飞控呢？
+目前穿越机主流的固件 betaflight、inav 固件都提供通道自定义映射的功能。
+以 bf 为例，bf 默认通道映射是 AETR1234，后面的 1234 暂时不用管。
+我们日本手的 DJI 遥控连上了后，通道都是正确的，但我想要中国手，也就是横滚和方向需要互换。
+那就把 AETR1234 改成 RETA1234 就可以了。
+bf 配置器中没有提供直接修改的地方，需要使用命令修改。
+在配置器中进入 cli 模式。
+输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;map RETA1234
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;并按下回车。
+再输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;save
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;按回车。&lt;/p&gt;
+&lt;p&gt;这时候飞控重启，不出意外，应该能够改成中国手了。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

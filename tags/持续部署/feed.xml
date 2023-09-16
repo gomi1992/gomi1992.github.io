@@ -6,20 +6,171 @@
     <description>Recent content in 持续部署 on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Nov 2022 09:47:08 +0000</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 09:47:08 +0000</lastBuildDate>
+    
+	<atom:link href="https://gomi1992.github.io/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>我的个人计划表</title>
       <link>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</link>
       <pubDate>Mon, 07 Nov 2022 09:47:08 +0000</pubDate>
       
       <guid>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</guid>
-      <description>起因 想把自己的工作计划在网页里展示出来，方便监督自己。
-想法 plantuml、mermaid、excalidraw都是不错的工具。
-plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。
-excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。
-有了想法就开工。
-集成mermaid mermaid提供js脚本，可以直接集成到网页中。
-&amp;lt;div id=&amp;#34;mermaid-gantt&amp;#34; class=&amp;#34;mermaid&amp;#34;&amp;gt; gantt dateFormat YYYY-MM-DD axisFormat %y/%d/%m title Schedule excludes weekdays section 个人安排网页&amp;lt;br&amp;gt;开发 集成甘特图 : done, 2022-11-02,3h &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/mermaid.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; window.onload = function () { mermaid.initialize({ theme: &amp;#39;forest&amp;#39;, // themeCSS: &amp;#39;.node rect { fill: red; }&amp;#39;, logLevel: 3, securityLevel: &amp;#39;loose&amp;#39;, flowchart: {curve: &amp;#39;basis&amp;#39;}, gantt: {axisFormat: &amp;#39;%m/%d/%Y&amp;#39;}, sequence: {actorMargin: 50}, // sequenceDiagram: { actorMargin: 300 } // deprecated }); } &amp;lt;/script&amp;gt; 集成excalidraw 方案1--分享链接集成 这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。 每回修改白板后就把新的链接更新到代码中即可。</description>
+      <description>&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+&lt;p&gt;想把自己的工作计划在网页里展示出来，方便监督自己。&lt;/p&gt;
+&lt;h1 id=&#34;想法&#34;&gt;想法&lt;/h1&gt;
+&lt;p&gt;plantuml、mermaid、excalidraw都是不错的工具。&lt;/p&gt;
+&lt;p&gt;plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。&lt;/p&gt;
+&lt;p&gt;excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。&lt;/p&gt;
+&lt;p&gt;有了想法就开工。&lt;/p&gt;
+&lt;h1 id=&#34;集成mermaid&#34;&gt;集成mermaid&lt;/h1&gt;
+&lt;p&gt;mermaid提供js脚本，可以直接集成到网页中。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid-gantt&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gantt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dateFormat  YYYY-MM-DD
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    axisFormat  %y/%d/%m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    title       Schedule
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    excludes    weekdays
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    section 个人安排网页&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;br&lt;/span&gt;&amp;gt;开发
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    集成甘特图                      : done, 2022-11-02,3h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;js/mermaid.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#366&#34;&gt;window&lt;/span&gt;.onload &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        mermaid.initialize({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            theme&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;forest&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// themeCSS: &amp;#39;.node rect { fill: red; }&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;            logLevel&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            securityLevel&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;loose&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            flowchart&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {curve&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;basis&amp;#39;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            gantt&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {axisFormat&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;%m/%d/%Y&amp;#39;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sequence&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; {actorMargin&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;50&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// sequenceDiagram: { actorMargin: 300 } // deprecated
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;集成excalidraw&#34;&gt;集成excalidraw&lt;/h1&gt;
+&lt;h2 id=&#34;方案1--分享链接集成&#34;&gt;方案1--分享链接集成&lt;/h2&gt;
+&lt;p&gt;这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。
+每回修改白板后就把新的链接更新到代码中即可。&lt;/p&gt;
+&lt;p&gt;最后并没有采用这个方案，原因在于数据不在自己手上。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这个方案并没有真正测试过，可能也会出现方案2的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;方案2--实时写作集成&#34;&gt;方案2--实时写作集成&lt;/h2&gt;
+&lt;p&gt;集成失败，由于部署环境没有部署https，所以静态页的安全上下文（&lt;a href=&#34;https://w3c.github.io/webappsec-secure-contexts/&#34;&gt;secure context&lt;/a&gt;）为不安全。
+因此，嵌在静态页中的iframe的安全上下文也为不安全。&lt;/p&gt;
+&lt;p&gt;这个安全上下文不安全导致excalidraw的实时写作无法使用加密信道。&lt;/p&gt;
+&lt;h2 id=&#34;方案3--使用静态数据由kroki渲染&#34;&gt;方案3--使用静态数据由kroki渲染&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kroki.io/&#34;&gt;kroki&lt;/a&gt;提供一堆各种图的在线渲染，将数据给他，他给你一个svg，就是这么简单，但是数据存在泄露的风险。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;有严重缺陷，kroki仅支持4096字节长度的数据渲染，一旦图大了也就无法渲染。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; textEncode(str) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#366&#34;&gt;window&lt;/span&gt;.TextEncoder) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; TextEncoder(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;).encode(str);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; utf8 &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; unescape(&lt;span style=&#34;color:#366&#34;&gt;encodeURIComponent&lt;/span&gt;(str));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; Uint8Array(utf8.length);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; utf8.length; i&lt;span style=&#34;color:#555&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        result[i] &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; utf8.charCodeAt(i);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; result;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 数据编码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; textEncode(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;your data here&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 数据压缩
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; compressed &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; pako.deflate(data, {level&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt;, to&lt;span style=&#34;color:#555&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;string&amp;#39;&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; result &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; btoa(compressed)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .replace(&lt;span style=&#34;color:#3aa&#34;&gt;/\+/g&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;).replace(&lt;span style=&#34;color:#3aa&#34;&gt;/\//g&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; kroki_url &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;https://kroki.io/excalidraw/svg/&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; result;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 请求svg
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;request.open(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, kroki_url, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;request.send(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (request.status &lt;span style=&#34;color:#555&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 向div中插入svg
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;excalidraw&amp;#34;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; request.responseText;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;方案4&#34;&gt;方案4&lt;/h2&gt;
+&lt;p&gt;将excalidraw转为SVG。&lt;/p&gt;
+&lt;p&gt;使用前端库&lt;a href=&#34;https://www.npmjs.com/package/@excalidraw/utils&#34;&gt;excalidraw/utils&lt;/a&gt;将excalidraw转换为svg，插入到网页中。&lt;/p&gt;
+&lt;p&gt;官方的示例代码有点问题，正确的如下。需要注意的地方是，不能直接传入string作为参数，需要将string转换成结构体传入（excalidraw数据本身就是json格式）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; loadExcalidraw() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; request &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;new&lt;/span&gt; XMLHttpRequest();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    request.open(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;/data/schedule.excalidraw&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    request.send(&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; (request.status &lt;span style=&#34;color:#555&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;200&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;eval&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;(&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; request.responseText &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;)&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;var&lt;/span&gt; svg &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; exportToSvg(data);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        svg.then((value) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            console.log(value);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;excalidraw&amp;#34;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; value.outerHTML;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;在线编辑&#34;&gt;在线编辑&lt;/h1&gt;
+&lt;p&gt;在github上打开项目，将com改为dev或者按一下“.”就可以进入GitHub.dev在线编辑环境，在其中安装excalidraw和mardown preview插件（网页端渲染mermaid还暂时不支持），就可以在线编辑excalidraw，还有预览mermaid图了。&lt;/p&gt;
+&lt;h1 id=&#34;持续部署&#34;&gt;持续部署&lt;/h1&gt;
+&lt;p&gt;因为是静态网页，所谓的部署也就是把最新的网页拉取回来。
+没有将静态页打包成docker镜像，若采用docker打包，则需要拉取 镜像--停止旧容器--运行新容器--删除旧镜像 这一系列操作；远不如本地部署nginx，更新对应的web资源目录来的方便。&lt;/p&gt;
+&lt;p&gt;触发使用github webhook触发，这里没有选择写个简单web服务通过内网穿透暴露到互联网上，主要担心内网穿透服务不稳定。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ntfy.sh/&#34;&gt;ntfy&lt;/a&gt;是一个消息发布、订阅的工具，原本我是想用telegram来打通树莓派和github的，但是telegram不支持两个bot间通信。
+在ntfy官方服务器中发布消息，你得先有一个主题，这个主题任何人都可以订阅、发布（没错，官方服务器就是这么设定的，想使用权限，你需要自己部署），所以起一个又长又难猜的主题吧。消息发布、和接受文档里都写得非常详细，不再赘述。&lt;/p&gt;
+&lt;p&gt;我这里使用python去轮询ntfy接口收取消息，并加上了访问频率限制，未对消息内容做检查，因为用不上，反正做的操作也是从github拉取项目。&lt;/p&gt;
+&lt;p&gt;注：github webhook支持内容验证，ntfy不能与之对接，得自己写web服务对接，所以这一点来说，ntfy有很大缺点。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;time&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;requests&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#0cf;font-weight:bold&#34;&gt;requests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0a8;font-weight:bold&#34;&gt;RateLimiter&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;capacity &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;4.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;rate &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0.25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#c0f&#34;&gt;control&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        now &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;min&lt;/span&gt;(self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;capacity, self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;int&lt;/span&gt;(now &lt;span style=&#34;color:#555&#34;&gt;-&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp) &lt;span style=&#34;color:#555&#34;&gt;*&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;rate)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;timeStamp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; now
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            self&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;tokens &lt;span style=&#34;color:#555&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rateLimiter &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; RateLimiter()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;last_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;True&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        tmp_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;time()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        resp &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;get(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://ntfy.sh/yourtopic/json?poll=1&amp;amp;since=&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#555&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#366&#34;&gt;str&lt;/span&gt;(&lt;span style=&#34;color:#366&#34;&gt;int&lt;/span&gt;(last_time)), stream&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        last_time &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; tmp_time
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;in&lt;/span&gt; resp&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;iter_lines():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; line:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                data &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; json&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;loads(line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; data[&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;event&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;message&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; data[&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;message&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#555&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;Update finish&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;if&lt;/span&gt; rateLimiter&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;control():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;get message&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        os&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;system(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;git pull&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        requests&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;post(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            &lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;https://ntfy.sh/yourtopic&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            data&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;Update finish&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;encode(encoding&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; e:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(e)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;实现效果&#34;&gt;实现效果&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -6,24 +6,51 @@
     <description>Recent content in 时间管理 on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Nov 2021 18:11:56 +0800</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 18:11:56 +0800</lastBuildDate>
+    
+	<atom:link href="https://gomi1992.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>timetagger定制</title>
       <link>https://gomi1992.github.io/2021/11/17/20211117_timetagger%E5%AE%9A%E5%88%B6/</link>
       <pubDate>Wed, 17 Nov 2021 18:11:56 +0800</pubDate>
       
       <guid>https://gomi1992.github.io/2021/11/17/20211117_timetagger%E5%AE%9A%E5%88%B6/</guid>
-      <description>为什么选择 timetagger 树莓派 3B 可能只带的动这个应用，更新版本的可能跑得动其他的。像 kimai 等可能跑不起来。
-为什么要定制 timetagger 没有提供登录功能，或者说登录功能太简陋，于是需要自行定制。
-如何定制 定制界面 把官方自带的界面 copy 到自己 pages 目录下。
-修改 login.md，所有的登录请求都是到这个界面下完成的，所以需要修改它，给它增加登录表单，具体细节看源码。
-totp 工具 import pyotp username = &amp;#34;your_username&amp;#34; gtoken = pyotp.random_base32(64) data = pyotp.totp.TOTP(gtoken).provisioning_uri(username, issuer_name=&amp;#34;MyTimeTagger&amp;#34;) print(&amp;#34;gtoken&amp;#34;, gtoken) print(&amp;#34;qrcode data&amp;#34;, data) 生成代码参考python 实现 google authenticator 认证 - Pythia 丶陌乐。
-其中 gtoken 就是 totp 密钥，在 run.py 中用到。
-qrcode data 是用来生成二维码的内容，随便找个工具，用这个内容生成二维码，然后使用 authy 这样的工具扫码即可。
-运行代码 修改静态界面资源到自己的 pages 目录。
-引入 pyotp 包。
-增加一个用户字典，保存用户名、密码、totp 密钥信息。
-修改 webtoken_for_localhost 函数。增加用户登录验证。</description>
+      <description>&lt;h2 id=&#34;为什么选择-timetagger&#34;&gt;为什么选择 timetagger&lt;/h2&gt;
+&lt;p&gt;树莓派 3B 可能只带的动这个应用，更新版本的可能跑得动其他的。像 kimai 等可能跑不起来。&lt;/p&gt;
+&lt;h2 id=&#34;为什么要定制&#34;&gt;为什么要定制&lt;/h2&gt;
+&lt;p&gt;timetagger 没有提供登录功能，或者说登录功能太简陋，于是需要自行定制。&lt;/p&gt;
+&lt;h2 id=&#34;如何定制&#34;&gt;如何定制&lt;/h2&gt;
+&lt;h3 id=&#34;定制界面&#34;&gt;定制界面&lt;/h3&gt;
+&lt;p&gt;把官方自带的界面 copy 到自己 pages 目录下。&lt;/p&gt;
+&lt;p&gt;修改 login.md，所有的登录请求都是到这个界面下完成的，所以需要修改它，给它增加登录表单，具体细节看源码。&lt;/p&gt;
+&lt;h3 id=&#34;totp-工具&#34;&gt;totp 工具&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;import pyotp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;username = &amp;#34;your_username&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gtoken = pyotp.random_base32(64)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data = pyotp.totp.TOTP(gtoken).provisioning_uri(username, issuer_name=&amp;#34;MyTimeTagger&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&amp;#34;gtoken&amp;#34;, gtoken)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&amp;#34;qrcode data&amp;#34;, data)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;生成代码参考&lt;a href=&#34;#root/ZycHBYUoADWo/Vx6AUcpGHodQ/ZXufmBwkSU3E/zXZRGpQeDzVc/wE4RlKFYqoH1/KUQrJURuWW9M&#34;&gt;python 实现 google authenticator 认证 - Pythia 丶陌乐&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;其中 gtoken 就是 totp 密钥，在 run.py 中用到。&lt;/p&gt;
+&lt;p&gt;qrcode data 是用来生成二维码的内容，随便找个工具，用这个内容生成二维码，然后使用 authy 这样的工具扫码即可。&lt;/p&gt;
+&lt;h3 id=&#34;运行代码&#34;&gt;运行代码&lt;/h3&gt;
+&lt;p&gt;修改静态界面资源到自己的 pages 目录。&lt;/p&gt;
+&lt;p&gt;引入 pyotp 包。&lt;/p&gt;
+&lt;p&gt;增加一个用户字典，保存用户名、密码、totp 密钥信息。&lt;/p&gt;
+&lt;p&gt;修改 webtoken_for_localhost 函数。增加用户登录验证。&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
+&lt;p&gt;timetagger 数据默认放在用户目录下的 _timetagger 目录下。&lt;/p&gt;
+&lt;p&gt;可以使用 ln 命令引到其他目录下。&lt;/p&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结&lt;/h2&gt;
+&lt;p&gt;完整代码&lt;a href=&#34;https://github.com/gomi1992/timetagger_app&#34;&gt;https://github.com/gomi1992/timetagger_app&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这不是 totp 的正确使用方式。&lt;/p&gt;
+&lt;p&gt;应该先验证用户名密码，再给界面去输入 totp。&lt;/p&gt;
+&lt;p&gt;但是目前登录逻辑上还是跟这个流程保持一致。&lt;/p&gt;
+&lt;p&gt;timetagger 的简单定制到此为止。&lt;/p&gt;
+</description>
     </item>
     
   </channel>
