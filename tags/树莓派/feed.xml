@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树莓派 on GoMi_Field</title>
+    <link>https://gomi1992.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+    <description>Recent content in 树莓派 on GoMi_Field</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Nov 2021 18:27:23 +0800</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我和树莓派</title>
+      <link>https://gomi1992.github.io/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <pubDate>Wed, 17 Nov 2021 18:27:23 +0800</pubDate>
+      
+      <guid>https://gomi1992.github.io/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <description>树莓派 我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。
+做个 nas 吧，说实话我没那么强烈的需求。
+做个摄像头监控服务器，我暂时没那么多财产需要监控。
+那做个提升自己效率的工具如何？
+也不是不行。
+选择树莓派做这些事的原因也比较简单。
+现成的。 功耗相对较低。 资料较多（主要是没那么多精力去折腾）。 docker 与 portainer 与 duplicati 这我就不多介绍了。
+docker 跑容器，portainer 管理 docker，duplicati 备份数据。
+在使用 docker 时有一点需要注意，使用 u 盘存储数据时，最好不要使用 fat32，建议使用 ext4 等格式。
+我在一开始，使用 fat32 格式的 u 盘，部署 docker+mysql，给 mysql 的数据分配到 u 盘上，mysql 死活无法启动，log 显示 mysql 容器卡在修改文件夹权限那里了，将 U 盘格式从 fat32 换到 ext4 后，就没问题了。
+多功能笔记工具 虽然我文笔不行，但是我还是喜欢写点东西记录下。
+而且我喜欢搜藏，浏览器里的书签已经让我无法顺利查找了。
+我也曾想过自己写一个更强大的书签整理工具。
+在我使用 notion 作为书签整理工具后，我发现，notion 还能保存网页。那我为什么要再造一个轮子呢？
+那使用 notion 就可以了，那跟树莓派有什么关系呢？
+notion 固然强大，可是数据始终存放在别人那里，而我喜欢把数据握在自己手里。
+于是我选择在树莓派上部署 trilium notes。</description>
+    </item>
+    
+  </channel>
+</rss>

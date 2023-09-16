@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>持续部署 on GoMi_Field</title>
+    <link>https://gomi1992.github.io/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/</link>
+    <description>Recent content in 持续部署 on GoMi_Field</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 09:47:08 +0000</lastBuildDate><atom:link href="https://gomi1992.github.io/tags/%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的个人计划表</title>
+      <link>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</link>
+      <pubDate>Mon, 07 Nov 2022 09:47:08 +0000</pubDate>
+      
+      <guid>https://gomi1992.github.io/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</guid>
+      <description>起因 想把自己的工作计划在网页里展示出来，方便监督自己。
+想法 plantuml、mermaid、excalidraw都是不错的工具。
+plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。
+excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。
+有了想法就开工。
+集成mermaid mermaid提供js脚本，可以直接集成到网页中。
+&amp;lt;div id=&amp;#34;mermaid-gantt&amp;#34; class=&amp;#34;mermaid&amp;#34;&amp;gt; gantt dateFormat YYYY-MM-DD axisFormat %y/%d/%m title Schedule excludes weekdays section 个人安排网页&amp;lt;br&amp;gt;开发 集成甘特图 : done, 2022-11-02,3h &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/mermaid.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; window.onload = function () { mermaid.initialize({ theme: &amp;#39;forest&amp;#39;, // themeCSS: &amp;#39;.node rect { fill: red; }&amp;#39;, logLevel: 3, securityLevel: &amp;#39;loose&amp;#39;, flowchart: {curve: &amp;#39;basis&amp;#39;}, gantt: {axisFormat: &amp;#39;%m/%d/%Y&amp;#39;}, sequence: {actorMargin: 50}, // sequenceDiagram: { actorMargin: 300 } // deprecated }); } &amp;lt;/script&amp;gt; 集成excalidraw 方案1--分享链接集成 这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。 每回修改白板后就把新的链接更新到代码中即可。</description>
+    </item>
+    
+  </channel>
+</rss>
