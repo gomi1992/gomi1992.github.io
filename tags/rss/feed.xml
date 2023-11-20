@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RSS on GoMi_Field</title>
-    <link>https://gomi1992.github.io/tags/rss/</link>
+    <link>https://blog.gomioh.fun/tags/rss/</link>
     <description>Recent content in RSS on GoMi_Field</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Jul 2022 08:19:14 +0800</lastBuildDate>
     
-	<atom:link href="https://gomi1992.github.io/tags/rss/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.gomioh.fun/tags/rss/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>inoreader中快速阅读全文</title>
-      <link>https://gomi1992.github.io/2022/07/24/20220724_inoreader%E4%B8%AD%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</link>
+      <link>https://blog.gomioh.fun/2022/07/24/20220724_inoreader%E4%B8%AD%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</link>
       <pubDate>Sun, 24 Jul 2022 08:19:14 +0800</pubDate>
       
-      <guid>https://gomi1992.github.io/2022/07/24/20220724_inoreader%E4%B8%AD%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</guid>
+      <guid>https://blog.gomioh.fun/2022/07/24/20220724_inoreader%E4%B8%AD%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</guid>
       <description>&lt;h1 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h1&gt;
 &lt;p&gt;现在用RSS追资讯的人可能不多了。
 RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
