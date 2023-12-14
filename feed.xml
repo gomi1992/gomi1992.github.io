@@ -17,14 +17,14 @@
       <pubDate>Mon, 07 Nov 2022 09:47:08 +0000</pubDate>
       
       <guid>https://blog.gomioh.fun/2022/11/07/20221107_%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92%E8%A1%A8/</guid>
-      <description>&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;
 &lt;p&gt;想把自己的工作计划在网页里展示出来，方便监督自己。&lt;/p&gt;
-&lt;h1 id=&#34;想法&#34;&gt;想法&lt;/h1&gt;
+&lt;h2 id=&#34;想法&#34;&gt;想法&lt;/h2&gt;
 &lt;p&gt;plantuml、mermaid、excalidraw都是不错的工具。&lt;/p&gt;
 &lt;p&gt;plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。&lt;/p&gt;
 &lt;p&gt;excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。&lt;/p&gt;
 &lt;p&gt;有了想法就开工。&lt;/p&gt;
-&lt;h1 id=&#34;集成mermaid&#34;&gt;集成mermaid&lt;/h1&gt;
+&lt;h2 id=&#34;集成mermaid&#34;&gt;集成mermaid&lt;/h2&gt;
 &lt;p&gt;mermaid提供js脚本，可以直接集成到网页中。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid-gantt&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;mermaid&amp;#34;&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gantt
@@ -51,17 +51,17 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;        });
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;集成excalidraw&#34;&gt;集成excalidraw&lt;/h1&gt;
-&lt;h2 id=&#34;方案1--分享链接集成&#34;&gt;方案1--分享链接集成&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;集成excalidraw&#34;&gt;集成excalidraw&lt;/h2&gt;
+&lt;h3 id=&#34;方案1--分享链接集成&#34;&gt;方案1--分享链接集成&lt;/h3&gt;
 &lt;p&gt;这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。
 每回修改白板后就把新的链接更新到代码中即可。&lt;/p&gt;
 &lt;p&gt;最后并没有采用这个方案，原因在于数据不在自己手上。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;这个方案并没有真正测试过，可能也会出现方案2的问题。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;方案2--实时写作集成&#34;&gt;方案2--实时写作集成&lt;/h2&gt;
+&lt;h3 id=&#34;方案2--实时写作集成&#34;&gt;方案2--实时写作集成&lt;/h3&gt;
 &lt;p&gt;集成失败，由于部署环境没有部署https，所以静态页的安全上下文（&lt;a href=&#34;https://w3c.github.io/webappsec-secure-contexts/&#34;&gt;secure context&lt;/a&gt;）为不安全。
 因此，嵌在静态页中的iframe的安全上下文也为不安全。&lt;/p&gt;
 &lt;p&gt;这个安全上下文不安全导致excalidraw的实时写作无法使用加密信道。&lt;/p&gt;
-&lt;h2 id=&#34;方案3--使用静态数据由kroki渲染&#34;&gt;方案3--使用静态数据由kroki渲染&lt;/h2&gt;
+&lt;h3 id=&#34;方案3--使用静态数据由kroki渲染&#34;&gt;方案3--使用静态数据由kroki渲染&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://kroki.io/&#34;&gt;kroki&lt;/a&gt;提供一堆各种图的在线渲染，将数据给他，他给你一个svg，就是这么简单，但是数据存在泄露的风险。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;有严重缺陷，kroki仅支持4096字节长度的数据渲染，一旦图大了也就无法渲染。&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;function&lt;/span&gt; textEncode(str) {
@@ -91,7 +91,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;// 向div中插入svg
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#366&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;excalidraw&amp;#34;&lt;/span&gt;).innerHTML &lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt; request.responseText;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;方案4&#34;&gt;方案4&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;方案4&#34;&gt;方案4&lt;/h3&gt;
 &lt;p&gt;将excalidraw转为SVG。&lt;/p&gt;
 &lt;p&gt;使用前端库&lt;a href=&#34;https://www.npmjs.com/package/@excalidraw/utils&#34;&gt;excalidraw/utils&lt;/a&gt;将excalidraw转换为svg，插入到网页中。&lt;/p&gt;
 &lt;p&gt;官方的示例代码有点问题，正确的如下。需要注意的地方是，不能直接传入string作为参数，需要将string转换成结构体传入（excalidraw数据本身就是json格式）。&lt;/p&gt;
@@ -108,9 +108,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        })
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;在线编辑&#34;&gt;在线编辑&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;在线编辑&#34;&gt;在线编辑&lt;/h2&gt;
 &lt;p&gt;在github上打开项目，将com改为dev或者按一下“.”就可以进入GitHub.dev在线编辑环境，在其中安装excalidraw和mardown preview插件（网页端渲染mermaid还暂时不支持），就可以在线编辑excalidraw，还有预览mermaid图了。&lt;/p&gt;
-&lt;h1 id=&#34;持续部署&#34;&gt;持续部署&lt;/h1&gt;
+&lt;h2 id=&#34;持续部署&#34;&gt;持续部署&lt;/h2&gt;
 &lt;p&gt;因为是静态网页，所谓的部署也就是把最新的网页拉取回来。
 没有将静态页打包成docker镜像，若采用docker打包，则需要拉取 镜像--停止旧容器--运行新容器--删除旧镜像 这一系列操作；远不如本地部署nginx，更新对应的web资源目录来的方便。&lt;/p&gt;
 &lt;p&gt;触发使用github webhook触发，这里没有选择写个简单web服务通过内网穿透暴露到互联网上，主要担心内网穿透服务不稳定。&lt;/p&gt;
@@ -168,7 +168,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        time&lt;span style=&#34;color:#555&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; e:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(e)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;实现效果&#34;&gt;实现效果&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现效果&#34;&gt;实现效果&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>

@@ -7,7 +7,7 @@
 	
 	<title>GoMi_Field  | 我的个人计划表</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.120.4">
+	<meta name="generator" content="Hugo 0.121.1">
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -187,14 +187,14 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="起因">起因</h1>
+		<div class="c-rich-text"><h2 id="起因">起因</h2>
 <p>想把自己的工作计划在网页里展示出来，方便监督自己。</p>
-<h1 id="想法">想法</h1>
+<h2 id="想法">想法</h2>
 <p>plantuml、mermaid、excalidraw都是不错的工具。</p>
 <p>plantuml和mermaid最主要的是展示甘特图，最终选择mermaid，原因是界面稍微漂亮一些，而plantuml渲染需要外部服务器。</p>
 <p>excalidraw是个非常自由的白板，本打算使用多人协作方式集成它，这样就能多端实时协作，但因为跨域的安全性问题无法集成到网页中。</p>
 <p>有了想法就开工。</p>
-<h1 id="集成mermaid">集成mermaid</h1>
+<h2 id="集成mermaid">集成mermaid</h2>
 <p>mermaid提供js脚本，可以直接集成到网页中。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mermaid-gantt&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;mermaid&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>gantt
@@ -221,17 +221,17 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>        });
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
-</span></span></code></pre></div><h1 id="集成excalidraw">集成excalidraw</h1>
-<h2 id="方案1--分享链接集成">方案1--分享链接集成</h2>
+</span></span></code></pre></div><h2 id="集成excalidraw">集成excalidraw</h2>
+<h3 id="方案1--分享链接集成">方案1--分享链接集成</h3>
 <p>这个方案很简单，效果也很好，将excalidraw的分享链接塞进iframe里。
 每回修改白板后就把新的链接更新到代码中即可。</p>
 <p>最后并没有采用这个方案，原因在于数据不在自己手上。</p>
 <p><strong>这个方案并没有真正测试过，可能也会出现方案2的问题。</strong></p>
-<h2 id="方案2--实时写作集成">方案2--实时写作集成</h2>
+<h3 id="方案2--实时写作集成">方案2--实时写作集成</h3>
 <p>集成失败，由于部署环境没有部署https，所以静态页的安全上下文（<a href="https://w3c.github.io/webappsec-secure-contexts/">secure context</a>）为不安全。
 因此，嵌在静态页中的iframe的安全上下文也为不安全。</p>
 <p>这个安全上下文不安全导致excalidraw的实时写作无法使用加密信道。</p>
-<h2 id="方案3--使用静态数据由kroki渲染">方案3--使用静态数据由kroki渲染</h2>
+<h3 id="方案3--使用静态数据由kroki渲染">方案3--使用静态数据由kroki渲染</h3>
 <p><a href="https://kroki.io/">kroki</a>提供一堆各种图的在线渲染，将数据给他，他给你一个svg，就是这么简单，但是数据存在泄露的风险。</p>
 <p><strong>有严重缺陷，kroki仅支持4096字节长度的数据渲染，一旦图大了也就无法渲染。</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">function</span> textEncode(str) {
@@ -261,7 +261,7 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>	<span style="color:#09f;font-style:italic">// 向div中插入svg
 </span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>	<span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#34;excalidraw&#34;</span>).innerHTML <span style="color:#555">=</span> request.responseText;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="方案4">方案4</h2>
+</span></span></code></pre></div><h3 id="方案4">方案4</h3>
 <p>将excalidraw转为SVG。</p>
 <p>使用前端库<a href="https://www.npmjs.com/package/@excalidraw/utils">excalidraw/utils</a>将excalidraw转换为svg，插入到网页中。</p>
 <p>官方的示例代码有点问题，正确的如下。需要注意的地方是，不能直接传入string作为参数，需要将string转换成结构体传入（excalidraw数据本身就是json格式）。</p>
@@ -278,9 +278,9 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        })
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="在线编辑">在线编辑</h1>
+</span></span></code></pre></div><h2 id="在线编辑">在线编辑</h2>
 <p>在github上打开项目，将com改为dev或者按一下“.”就可以进入GitHub.dev在线编辑环境，在其中安装excalidraw和mardown preview插件（网页端渲染mermaid还暂时不支持），就可以在线编辑excalidraw，还有预览mermaid图了。</p>
-<h1 id="持续部署">持续部署</h1>
+<h2 id="持续部署">持续部署</h2>
 <p>因为是静态网页，所谓的部署也就是把最新的网页拉取回来。
 没有将静态页打包成docker镜像，若采用docker打包，则需要拉取 镜像--停止旧容器--运行新容器--删除旧镜像 这一系列操作；远不如本地部署nginx，更新对应的web资源目录来的方便。</p>
 <p>触发使用github webhook触发，这里没有选择写个简单web服务通过内网穿透暴露到互联网上，主要担心内网穿透服务不稳定。</p>
@@ -338,7 +338,7 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        time<span style="color:#555">.</span>sleep(<span style="color:#f60">10</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">Exception</span> <span style="color:#069;font-weight:bold">as</span> e:
 </span></span><span style="display:flex;"><span>        <span style="color:#366">print</span>(e)
-</span></span></code></pre></div><h1 id="实现效果">实现效果</h1>
+</span></span></code></pre></div><h2 id="实现效果">实现效果</h2>
 <p><img src="https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png" alt=""></p>
 </div>
 	</section>
