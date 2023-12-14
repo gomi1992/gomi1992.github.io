@@ -169,7 +169,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#c00;font-weight:bold&#34;&gt;Exception&lt;/span&gt; &lt;span style=&#34;color:#069;font-weight:bold&#34;&gt;as&lt;/span&gt; e:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#366&#34;&gt;print&lt;/span&gt;(e)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实现效果&#34;&gt;实现效果&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gomi1992/blog_images/main/img/202211081623858.png&#34; alt=&#34;实现效果&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
