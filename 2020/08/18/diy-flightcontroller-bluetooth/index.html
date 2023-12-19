@@ -180,6 +180,22 @@ onload='renderMathInElement(document.body);'></script>
 		datetime="2020-08-18T14:46:19&#43;08:00">2020-8-18 14:46</time>
 </div>
 
+<details class="toc" open>
+<summary>
+    <hr />
+</summary>
+<div class="inline toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#为什么要-diy-这玩意">为什么要 DIY 这玩意</a></li>
+    <li><a href="#原理">原理</a></li>
+    <li><a href="#实现方案">实现方案</a></li>
+    <li><a href="#代码">代码</a></li>
+  </ul>
+</nav>
+</div>
+</details>
+
 <hr />
 
 
@@ -192,15 +208,15 @@ onload='renderMathInElement(document.body);'></script>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><p>SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。</p>
 <!-- more -->
-<h1 id="为什么要-diy-这玩意">为什么要 DIY 这玩意</h1>
+<h2 id="为什么要-diy-这玩意">为什么要 DIY 这玩意</h2>
 <ul>
 <li>iphone 没法通过 otg 连接飞控</li>
 <li>别人家卖的稍微有点贵</li>
 </ul>
-<h1 id="原理">原理</h1>
+<h2 id="原理">原理</h2>
 <p>单片机作为 USB Host，与飞控通信。
 单片机连接蓝牙串口模块，于手机通信。</p>
-<h1 id="实现方案">实现方案</h1>
+<h2 id="实现方案">实现方案</h2>
 <p>speedybee 使用 STM32 F105 + TI CC2541 蓝牙。
 STM32 F105 无须额外芯片即可作为 USB Host。</p>
 <p>emmm</p>
@@ -208,7 +224,7 @@ STM32 F105 无须额外芯片即可作为 USB Host。</p>
 结合 USB Host Shield 和 蓝牙串口模块。</p>
 <p>USB Host Shield 官方购买连接 <a href="http://shop.tkjelectronics.dk/product_info.php?products_id=43">http://shop.tkjelectronics.dk/product_info.php?products_id=43</a>，官方库（适用于 Arduino）<a href="https://github.com/felis/USB_Host_Shield_2.0">https://github.com/felis/USB_Host_Shield_2.0</a>。该板子使用了 max3421e 芯片。</p>
 <p>直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。</p>
-<h1 id="代码">代码</h1>
+<h2 id="代码">代码</h2>
 <p>前提是安装 USB Host Shield 的库。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;cdcacm.h&gt;</span><span style="color:#099">
 </span></span></span><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;usbhub.h&gt;</span><span style="color:#099">

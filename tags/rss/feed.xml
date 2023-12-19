@@ -17,19 +17,19 @@
       <pubDate>Sun, 24 Jul 2022 08:19:14 +0800</pubDate>
       
       <guid>https://blog.gomioh.fun/2022/07/24/inoreader/</guid>
-      <description>&lt;h1 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h2&gt;
 &lt;p&gt;现在用RSS追资讯的人可能不多了。
 RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
 随着google reader的关闭，我现在用的最多的阅读器就是&lt;a href=&#34;https://www.inoreader.com/&#34;&gt;inoreader&lt;/a&gt;了。&lt;/p&gt;
-&lt;h1 id=&#34;过时的订阅源&#34;&gt;过时的订阅源&lt;/h1&gt;
+&lt;h2 id=&#34;过时的订阅源&#34;&gt;过时的订阅源&lt;/h2&gt;
 &lt;p&gt;现在新兴的媒体基本都不提供RSS订阅方式，毕竟用RSS没法看到他们的广告，也没法去产生各种联动，提高他们的效益。
 于是诞生了&lt;a href=&#34;https://github.com/DIYgod/RSSHub&#34;&gt;RSSHub&lt;/a&gt;这样的项目，让我们能够用RSS跟上时代。&lt;/p&gt;
-&lt;h1 id=&#34;inoreader的痛&#34;&gt;inoreader的痛&lt;/h1&gt;
+&lt;h2 id=&#34;inoreader的痛&#34;&gt;inoreader的痛&lt;/h2&gt;
 &lt;p&gt;inoreader免费版对于我已经够用了，但是仍存在一点点小问题。
 比如我没办法在inoreader中阅读cnbeta的全文，必须得离开rss阅读器。
 于是我开始寻求解决方案，比如寻找其他的阅读器作为替代。
 但成效甚微，不是不支持阅读区内全文阅读，就是限制太多（需要付费）。&lt;/p&gt;
-&lt;h1 id=&#34;柳暗花明&#34;&gt;柳暗花明&lt;/h1&gt;
+&lt;h2 id=&#34;柳暗花明&#34;&gt;柳暗花明&lt;/h2&gt;
 &lt;p&gt;放弃寻找阅读器替换这条路后，我试着寻找油猴脚本来辅助，也确实找到了一个比较适合我的脚本&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/897-inoreader-full-feed&#34;&gt;InoReader Full Feed&lt;/a&gt;。
 为什么说比较适合呢？因为我的需求很简单，只需要能够以iframe的方式将目标网页嵌入阅读器就可以，而这款脚本的功能超乎了我的想象。
 于是我也毫不留情，开始简单粗暴的改造。&lt;/p&gt;
@@ -52,7 +52,7 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
 &lt;p&gt;在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;referrer&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;no-referrer&amp;#34;&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当然，已经有人在油猴脚本中实现了&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader&#34;&gt;显示防盗链图片 for Inoreader&lt;/a&gt;。&lt;/p&gt;
-&lt;h1 id=&#34;小trick02&#34;&gt;小trick02&lt;/h1&gt;
+&lt;h2 id=&#34;小trick02&#34;&gt;小trick02&lt;/h2&gt;
 &lt;p&gt;小trick01并不完美，在inoreader中缩略图仍没法加载。
 有个办法可以解决，在发送请求时拦截请求，去掉header中的referrer。
 浏览器中可以使用&lt;a href=&#34;https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj&#34;&gt;ModHeader&lt;/a&gt;和&lt;a href=&#34;https://chrome.google.com/webstore/detail/redirect-url-modify-heade/mdnleldcmiljblolnjhpnblkcekpdkpa&#34;&gt;requestly.io&lt;/a&gt;等插件完成上述功能。&lt;/p&gt;

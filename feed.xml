@@ -179,19 +179,19 @@
       <pubDate>Sun, 24 Jul 2022 08:19:14 +0800</pubDate>
       
       <guid>https://blog.gomioh.fun/2022/07/24/inoreader/</guid>
-      <description>&lt;h1 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;过时的rss&#34;&gt;过时的RSS&lt;/h2&gt;
 &lt;p&gt;现在用RSS追资讯的人可能不多了。
 RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
 随着google reader的关闭，我现在用的最多的阅读器就是&lt;a href=&#34;https://www.inoreader.com/&#34;&gt;inoreader&lt;/a&gt;了。&lt;/p&gt;
-&lt;h1 id=&#34;过时的订阅源&#34;&gt;过时的订阅源&lt;/h1&gt;
+&lt;h2 id=&#34;过时的订阅源&#34;&gt;过时的订阅源&lt;/h2&gt;
 &lt;p&gt;现在新兴的媒体基本都不提供RSS订阅方式，毕竟用RSS没法看到他们的广告，也没法去产生各种联动，提高他们的效益。
 于是诞生了&lt;a href=&#34;https://github.com/DIYgod/RSSHub&#34;&gt;RSSHub&lt;/a&gt;这样的项目，让我们能够用RSS跟上时代。&lt;/p&gt;
-&lt;h1 id=&#34;inoreader的痛&#34;&gt;inoreader的痛&lt;/h1&gt;
+&lt;h2 id=&#34;inoreader的痛&#34;&gt;inoreader的痛&lt;/h2&gt;
 &lt;p&gt;inoreader免费版对于我已经够用了，但是仍存在一点点小问题。
 比如我没办法在inoreader中阅读cnbeta的全文，必须得离开rss阅读器。
 于是我开始寻求解决方案，比如寻找其他的阅读器作为替代。
 但成效甚微，不是不支持阅读区内全文阅读，就是限制太多（需要付费）。&lt;/p&gt;
-&lt;h1 id=&#34;柳暗花明&#34;&gt;柳暗花明&lt;/h1&gt;
+&lt;h2 id=&#34;柳暗花明&#34;&gt;柳暗花明&lt;/h2&gt;
 &lt;p&gt;放弃寻找阅读器替换这条路后，我试着寻找油猴脚本来辅助，也确实找到了一个比较适合我的脚本&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/897-inoreader-full-feed&#34;&gt;InoReader Full Feed&lt;/a&gt;。
 为什么说比较适合呢？因为我的需求很简单，只需要能够以iframe的方式将目标网页嵌入阅读器就可以，而这款脚本的功能超乎了我的想象。
 于是我也毫不留情，开始简单粗暴的改造。&lt;/p&gt;
@@ -214,7 +214,7 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
 &lt;p&gt;在inoreader的header中插入如下代码，可以解决部分图片防盗链的问题。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#309;font-weight:bold&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;referrer&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#309&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#34;no-referrer&amp;#34;&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当然，已经有人在油猴脚本中实现了&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader&#34;&gt;显示防盗链图片 for Inoreader&lt;/a&gt;。&lt;/p&gt;
-&lt;h1 id=&#34;小trick02&#34;&gt;小trick02&lt;/h1&gt;
+&lt;h2 id=&#34;小trick02&#34;&gt;小trick02&lt;/h2&gt;
 &lt;p&gt;小trick01并不完美，在inoreader中缩略图仍没法加载。
 有个办法可以解决，在发送请求时拦截请求，去掉header中的referrer。
 浏览器中可以使用&lt;a href=&#34;https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj&#34;&gt;ModHeader&lt;/a&gt;和&lt;a href=&#34;https://chrome.google.com/webstore/detail/redirect-url-modify-heade/mdnleldcmiljblolnjhpnblkcekpdkpa&#34;&gt;requestly.io&lt;/a&gt;等插件完成上述功能。&lt;/p&gt;
@@ -338,15 +338,15 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
       <guid>https://blog.gomioh.fun/2020/08/18/diy-flightcontroller-bluetooth/</guid>
       <description>&lt;p&gt;SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;h1 id=&#34;为什么要-diy-这玩意&#34;&gt;为什么要 DIY 这玩意&lt;/h1&gt;
+&lt;h2 id=&#34;为什么要-diy-这玩意&#34;&gt;为什么要 DIY 这玩意&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;iphone 没法通过 otg 连接飞控&lt;/li&gt;
 &lt;li&gt;别人家卖的稍微有点贵&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;
+&lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
 &lt;p&gt;单片机作为 USB Host，与飞控通信。
 单片机连接蓝牙串口模块，于手机通信。&lt;/p&gt;
-&lt;h1 id=&#34;实现方案&#34;&gt;实现方案&lt;/h1&gt;
+&lt;h2 id=&#34;实现方案&#34;&gt;实现方案&lt;/h2&gt;
 &lt;p&gt;speedybee 使用 STM32 F105 + TI CC2541 蓝牙。
 STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
 &lt;p&gt;emmm&lt;/p&gt;
@@ -354,7 +354,7 @@ STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
 结合 USB Host Shield 和 蓝牙串口模块。&lt;/p&gt;
 &lt;p&gt;USB Host Shield 官方购买连接 &lt;a href=&#34;http://shop.tkjelectronics.dk/product_info.php?products_id=43&#34;&gt;http://shop.tkjelectronics.dk/product_info.php?products_id=43&lt;/a&gt;，官方库（适用于 Arduino）&lt;a href=&#34;https://github.com/felis/USB_Host_Shield_2.0&#34;&gt;https://github.com/felis/USB_Host_Shield_2.0&lt;/a&gt;。该板子使用了 max3421e 芯片。&lt;/p&gt;
 &lt;p&gt;直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。&lt;/p&gt;
-&lt;h1 id=&#34;代码&#34;&gt;代码&lt;/h1&gt;
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
 &lt;p&gt;前提是安装 USB Host Shield 的库。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;cdcacm.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#099&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;&amp;lt;usbhub.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;
@@ -462,8 +462,7 @@ STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
       
       <guid>https://blog.gomioh.fun/2020/02/01/dji-fpv-to-chinese-mode/</guid>
       <description>&lt;p&gt;DJI FPV 遥控器如何设置成中国手使用方式。&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;h1 id=&#34;入手-dji-fpv&#34;&gt;入手 DJI FPV&lt;/h1&gt;
+&lt;h2 id=&#34;入手-dji-fpv&#34;&gt;入手 DJI FPV&lt;/h2&gt;
 &lt;p&gt;老早大疆就发布了主要应用在穿越机上的图传设备--DJI FPV，我馋了好久，碍于钱包，一直没入手。
 前段时间，我终于狠下心买了一套--天空端加遥控器，接着问题来了。
 我因为种种原因，从入模坑时就是中国手了，这回买的 DJI 遥控是日本手的。
@@ -472,7 +471,7 @@ STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
 &lt;p&gt;在我装完飞机后，我无奈的发现我没找到改中国手的地方。&lt;/p&gt;
 &lt;p&gt;是时候发挥广大人民群众的智慧了。&lt;/p&gt;
 &lt;p&gt;在发挥之前，需要科普一下遥控的几个通道。&lt;/p&gt;
-&lt;h1 id=&#34;航模通道&#34;&gt;航模通道&lt;/h1&gt;
+&lt;h2 id=&#34;航模通道&#34;&gt;航模通道&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -502,7 +501,7 @@ STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
 &lt;p&gt;我们遥控的两个摇杆能够控制上表中的四个通道。
 在大多数遥控中没有直接修改遥感与 AETR 对应方式的地方，但是可以通过修改 mode 来达到效果，比如 mode2 对应美国手。
 而在 opentx 系统的遥控中可以随意修改 AETR 的对应方式，实在是非常灵活。&lt;/p&gt;
-&lt;h1 id=&#34;在飞控中修改通道映射&#34;&gt;在飞控中修改通道映射&lt;/h1&gt;
+&lt;h2 id=&#34;在飞控中修改通道映射&#34;&gt;在飞控中修改通道映射&lt;/h2&gt;
 &lt;p&gt;既然我们无法从遥控器设置那里突破，拆遥控也解决不了问题，那飞控呢？
 目前穿越机主流的固件 betaflight、inav 固件都提供通道自定义映射的功能。
 以 bf 为例，bf 默认通道映射是 AETR1234，后面的 1234 暂时不用管。
