@@ -223,10 +223,10 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
     
     <item>
       <title>我和树莓派</title>
-      <link>https://blog.gomioh.fun/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <link>https://blog.gomioh.fun/2021/11/17/i-and-raspi/</link>
       <pubDate>Wed, 17 Nov 2021 18:27:23 +0800</pubDate>
       
-      <guid>https://blog.gomioh.fun/2021/11/17/20211117_%E6%88%91%E5%92%8C%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <guid>https://blog.gomioh.fun/2021/11/17/i-and-raspi/</guid>
       <description>&lt;h2 id=&#34;树莓派&#34;&gt;树莓派&lt;/h2&gt;
 &lt;p&gt;我手头有一个树莓派 3B 和上古的树莓派 1B。总想拿他们做点事。&lt;/p&gt;
 &lt;p&gt;做个 nas 吧，说实话我没那么强烈的需求。&lt;/p&gt;
@@ -290,10 +290,10 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
     
     <item>
       <title>timetagger定制</title>
-      <link>https://blog.gomioh.fun/2021/11/17/20211117_timetagger%E5%AE%9A%E5%88%B6/</link>
+      <link>https://blog.gomioh.fun/2021/11/17/timetagger-modify/</link>
       <pubDate>Wed, 17 Nov 2021 18:11:56 +0800</pubDate>
       
-      <guid>https://blog.gomioh.fun/2021/11/17/20211117_timetagger%E5%AE%9A%E5%88%B6/</guid>
+      <guid>https://blog.gomioh.fun/2021/11/17/timetagger-modify/</guid>
       <description>&lt;h2 id=&#34;为什么选择-timetagger&#34;&gt;为什么选择 timetagger&lt;/h2&gt;
 &lt;p&gt;树莓派 3B 可能只带的动这个应用，更新版本的可能跑得动其他的。像 kimai 等可能跑不起来。&lt;/p&gt;
 &lt;h2 id=&#34;为什么要定制&#34;&gt;为什么要定制&lt;/h2&gt;
@@ -332,10 +332,10 @@ RSS没有相似推荐，没有社交，仅仅只有非常单纯的信息流。
     
     <item>
       <title>DIY飞控蓝牙调参模块</title>
-      <link>https://blog.gomioh.fun/2020/08/18/20200818_diy%E9%A3%9E%E6%8E%A7%E8%93%9D%E7%89%99%E8%B0%83%E5%8F%82%E6%A8%A1%E5%9D%97/</link>
+      <link>https://blog.gomioh.fun/2020/08/18/diy-flightcontroller-bluetooth/</link>
       <pubDate>Tue, 18 Aug 2020 14:46:19 +0800</pubDate>
       
-      <guid>https://blog.gomioh.fun/2020/08/18/20200818_diy%E9%A3%9E%E6%8E%A7%E8%93%9D%E7%89%99%E8%B0%83%E5%8F%82%E6%A8%A1%E5%9D%97/</guid>
+      <guid>https://blog.gomioh.fun/2020/08/18/diy-flightcontroller-bluetooth/</guid>
       <description>&lt;p&gt;SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h1 id=&#34;为什么要-diy-这玩意&#34;&gt;为什么要 DIY 这玩意&lt;/h1&gt;
@@ -457,10 +457,10 @@ STM32 F105 无须额外芯片即可作为 USB Host。&lt;/p&gt;
     
     <item>
       <title>DJI FPV遥控改中国手</title>
-      <link>https://blog.gomioh.fun/2020/02/01/20200201_dji-fpv%E9%81%A5%E6%8E%A7%E6%94%B9%E4%B8%AD%E5%9B%BD%E6%89%8B/</link>
+      <link>https://blog.gomioh.fun/2020/02/01/dji-fpv-to-chinese-mode/</link>
       <pubDate>Sat, 01 Feb 2020 16:31:15 +0800</pubDate>
       
-      <guid>https://blog.gomioh.fun/2020/02/01/20200201_dji-fpv%E9%81%A5%E6%8E%A7%E6%94%B9%E4%B8%AD%E5%9B%BD%E6%89%8B/</guid>
+      <guid>https://blog.gomioh.fun/2020/02/01/dji-fpv-to-chinese-mode/</guid>
       <description>&lt;p&gt;DJI FPV 遥控器如何设置成中国手使用方式。&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h1 id=&#34;入手-dji-fpv&#34;&gt;入手 DJI FPV&lt;/h1&gt;
