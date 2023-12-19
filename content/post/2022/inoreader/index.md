@@ -5,6 +5,7 @@ tags:
   - RSS
 categories:
   - 无聊的开发
+TOC: true
 ---
 
 # 过时的RSS
