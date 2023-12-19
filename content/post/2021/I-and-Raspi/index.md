@@ -5,6 +5,7 @@ categories:
    - 无聊的开发
 tags: 
    - 树莓派
+TOC: true
 ---
 
 ## 树莓派

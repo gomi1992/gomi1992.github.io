@@ -7,23 +7,24 @@ tags:
   - DIY
 categories:
   - 无人机
+TOC: true
 ---
 
 SpeedyBee 蓝牙调参模块虽好，于是我 DIY 了一个。
 
 <!-- more -->
 
-# 为什么要 DIY 这玩意
+## 为什么要 DIY 这玩意
 
 - iphone 没法通过 otg 连接飞控
 - 别人家卖的稍微有点贵
 
-# 原理
+## 原理
 
 单片机作为 USB Host，与飞控通信。
 单片机连接蓝牙串口模块，于手机通信。
 
-# 实现方案
+## 实现方案
 
 speedybee 使用 STM32 F105 + TI CC2541 蓝牙。
 STM32 F105 无须额外芯片即可作为 USB Host。
@@ -37,7 +38,7 @@ USB Host Shield 官方购买连接 [http://shop.tkjelectronics.dk/product_info.p
 
 直接组装，下载完代码后再连接蓝牙串口模块至 uart 接口（uno 仅有一个 uart）。
 
-# 代码
+## 代码
 
 前提是安装 USB Host Shield 的库。
 

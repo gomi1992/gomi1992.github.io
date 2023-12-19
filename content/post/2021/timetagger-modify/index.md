@@ -5,6 +5,7 @@ tags:
    - 时间管理
 categories:
    - 无聊的开发
+TOC: true
 ---
 
 ## 为什么选择 timetagger
